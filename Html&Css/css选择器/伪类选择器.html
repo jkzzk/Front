@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>伪类选择器</title>
+		<style type="text/css">
+			/**
+			 * 为未访问过的连接设置黄绿色
+					:link 正常的链接
+			 */
+			a:link{
+				color: yellowgreen;
+			}
+			/* 
+				为访问过的连接设置为红色
+					浏览器是通过历史记录来判断连接是否访问过
+					:visited 访问过的连接，只能设置字体颜色
+			 */
+			a:visited {
+				color: red;
+			}
+			/* 
+				:hover 鼠标移入的伪类
+			 */
+			a:hover {
+				color: aquamarine;
+			}
+			/* 
+				:active 超链接被点击的状态
+			 */
+			a:active {
+				color: black;
+			}
+			
+			/* 
+				:hover 和 :active 可以给其他标签设置状态
+				IE6不支持该特性
+			 */
+			p:hover {
+				background-color: yellow;
+			}
+			
+			p:active {
+				background-color: orange;
+			}
+			
+			/* 
+				文本框获取焦点时的状态
+			 */
+			input:focus {
+				border-color: #FF0000;
+			}
+			
+			/*
+				选择文字时的状态
+				火狐浏览器不支持该样式，用-moz-selection
+			*/
+/* 			i::-moz-selection {
+				background-color: #7FFFD4;
+			} */
+			
+			i::selection {
+				background-color: #7FFFD4;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			伪类：表示元素的一种特殊的状态
+				如：链接的访问状态，没访问，已访问，表单的焦点状态，获取焦点，未获取焦点
+		-->
+		<a href="http://www.baidu.com">百度</a>
+		<br /> <br />
+		<a href="http://www.baidu123456.com">百度123456</a>
+		
+		<p>我是一个段落</p>
+		
+		<i>我是一段话，哈哈哈哈</i>
+		<br /><br />
+		<input type="text">
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>长度和颜色</title>
+		<style type="text/css">
+			/* 
+				长度单位：
+					1.像素（px），最常用单位
+					2.百分比（%），百分比是根据其父元素的宽度或高度计算，
+						子元素的宽度或高度，使用百分比，当父元素改变时
+						子元素也会跟着改变
+					3.em，和百分比类似，相对于当前元素的字体大小，
+						1em = 1font-size
+						当设置字体相关的大小时，常用em
+				颜色单位：
+					1.使用颜色单词来表示不同的颜色
+					2.通过RGB来设置不同的颜色
+						通过rgb(红色浓度,绿色浓度,蓝色浓度)
+						浓度从0-255，也可以采用百分比 0%--100%
+					3.十六进制RGB值
+						与RGB原理一致，只是用16进制来表示，使用三组两位的
+						十六精致来表示，#红色绿色蓝色
+						红色：0-FF  RGB中的255
+						绿色：0-FF  RGB中的255
+						蓝色：0-FF  RGB中的255
+						红色：
+							#FF0000
+						每组的两位重复的颜色可以简写，缩写为一位：#F00
+			 */
+			.box {
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			}
+			.box1 {
+				width: 1em;
+				height: 50%;
+				background-color: rgb(0,255,0);
+				font-size: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1"></div>
+		</div>
+	</body>
+</html>
