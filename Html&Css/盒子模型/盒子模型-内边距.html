@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型-内边距</title>
+    <style type="text/css">
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #7FFFD4;
+            border: red 10px solid;
+
+            /*
+                设置内边距
+                    样式：
+                        padding-top
+                        padding-bottom
+                        padding-right
+                        padding-left
+                    来设置四个方向上的内边距
+                    内边距会影响盒子的可见区域大小，内容区的背景会延伸到内边距的区域，但是内容不会延伸
+            */
+            /*padding-top: 100px;*/
+            /*padding-right: 100px;*/
+            /*padding-bottom: 100px;*/
+            /*padding-left: 100px;*/
+
+            /*
+                内边距的简写：
+                    padding
+                    与边框一样，可以同时设置四个边的内边距,设置的规则也一样
+            */
+        }
+
+        .box2 {
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
