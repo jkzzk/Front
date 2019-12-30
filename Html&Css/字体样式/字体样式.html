@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字体样式</title>
+		<style type="text/css">
+			p {
+				/* 设置字体颜色 */
+				color : #FF0000;
+				/* 
+					设置字体大小，默认浏览器的字体大小为16px 字体大小，
+					并不是正真意义上的字体大小，而是字体范围的大小，根据
+					字体的不同，字体大小设置的效果也不同
+				*/
+				font-size: 20px;
+				/* 
+					指定文字的字体
+					该样式可以设置多个字体值，从第一个开始，如果前面的不
+					支持，就用后一个，如果都不支持，就用默认的
+					字体是浏览器所在的计算机中存在的，如果不存在将用其他
+					字体或者默认字体
+					
+					字体分类：
+						1.serif 衬线字体
+						2.sans-serif 非衬线字体
+						3.monospace 等宽字体
+						4.cursive 草书字体
+						5.fantasy 虚幻字体
+					这些字体分类，是大概念的分类，可以将字体设置为这些大
+					字体分类，浏览器会自动从该大类中选择一种字体，应用样式
+					一般会写在最后面
+				 */
+				font-family: 华文彩云,arial,黑体;
+			}
+			
+			.p1 {
+				color: #FFA500;
+				font-size: 30px;
+				font-family: 华文彩云;
+				
+				/* 
+					字体的风格，设置文字为斜体
+						normal：正常字体，默认
+						italic：斜体
+						oblique：斜体
+						大部分浏览器不会对italic和oblique不做区分，所以
+						一般只会使用italic属性
+				 */
+				/* font-style: oblique; */
+				
+				/* 
+					字体粗心，设置文字的粗细
+						normal：正常字体，默认
+						bold：文字加粗显示
+						100-900：从细到粗
+					字体加粗，其实是系统中有各种字体的粗细版本，但一般情况
+					下，不会有9个粗细版本，所以，一般不会用到9个版本的粗细
+					字体
+				 */
+				/* font-weight: bold; */
+				
+				/* 
+					设置小型大写字体
+						normal：正常字体，默认
+						small-cap：小型大写字母
+						所有字母都是大写的，但是小写字母的大写要比大写字母
+						小一些
+				 */
+				font-variant: small-caps;
+			}
+			
+			.p2 {
+				color: #008000;
+				/* 
+					字体样式的简写
+						加粗、斜体、小型大写字母可写可不写，顺序无所谓
+						大小和字体必须写，且字体是最后一个，大小是第二个元素
+				 */
+				font: italic small-caps bold 60px "微软雅黑";
+			}
+		</style>
+	</head>
+	<body>
+		
+		<p>
+			我是一个p标签,abcdefghijkopqrstuvwxyz
+		</p>
+		
+		<p style="font-size: 30px;font-family: serif;">衬线字体</p>
+		<p style="font-size: 30px;font-family: sans-serif;">非衬线字体</p>
+		<p style="font-size: 30px;font-family: monospace;">等宽字体</p>
+		<p style="font-size: 30px;font-family: cursive;">草书字体</p>
+		<p style="font-size: 30px;font-family: fantasy;">虚幻字体</p>
+		
+		<p class="p1">
+			我是一个p标签,abcdefghijkopqrstuvwxyz
+		</p>
+		
+		<p class="p2">
+			我是一个p标签,abcdefghijkopqrstuvwxyz
+		</p>
+	</body>
+</html>

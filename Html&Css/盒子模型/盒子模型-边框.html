@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>盒子模型</title>
+		<style type="text/css">
+			
+			.box1 {
+				/* 
+					通过 width和height设置内容区的宽度和高度
+				 */
+				width: 300px;
+				height: 300px;
+				background-color: #7FFFD4;
+				
+				/* 
+					为元素设置边框
+						必须指定三个样式
+						border-width: 边框宽度
+						border-color: 边框颜色
+						border-style: 边框样式
+				 */
+				
+				/* 
+					如果在border-width中设置了的4个值，那么是按照顺时针的顺序，设置各个方向上的边框宽度
+					如果在border-width中设置了的3个值，那么这个3个值会按照顺时针的顺序，设置上、右、下，
+					左会和右一样
+					如果在border-width中设置了的2个值，那么这个2个值会按照顺时针的顺序，设置上、右，下会
+					和上一样，左会和右一样
+					如果设置一个值，那么会应用到四个方向的边框
+
+					此规律使用margin padding border-color border-style ... 同样使用方法的属性上
+
+					除了border-width外，CSS中还有border-xxx-width
+						xxx 为 right、left、top、bottom
+						用来设置各个边的宽度
+				 */
+				/* border-width: 10px 20px 30px 40px; */
+				/* border-width: 10px 20px 30px; */
+				/* border-width: 10px 20px; */
+				/*border-width: 10px;*/
+				/*border-color: black red yellow green;*/
+				/*
+					样式值：
+						none：默认，没有边框
+						solid：实线
+						dotted：点状边框
+						dashed：虚线
+						double：双线
+				*/
+				/*border-style: solid double dashed dotted;*/
+
+				/*简写样式
+					border:
+						同时设置四个边框的样式、宽度、颜色
+						没有顺序,只能指定四个边,不能单独指定每个边
+					border-xxx:
+						指定某一个边的样式、宽度、颜色，没有顺序
+				*/
+
+				/*border: solid yellow 10px;*/
+				/*border-bottom: #9ACD32 10px dotted;*/
+				/*
+					只设置三个边10px 实线 红色
+						1.设置三个边
+						2.设置四个边，并设置其中一个边样式为none
+				*/
+				/*border-top: #FF0000 10px solid;*/
+				/*border-bottom: #FF0000 10px solid;*/
+				/*border-left: #FF0000 10px solid;*/
+
+				border: red 10px solid;
+				border-right: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!-- 
+			盒子模型：
+				内容区(content)
+				内边距(padding)
+				边框(border)
+				外边距(margin)
+		 -->
+		<div class="box1"></div>
+	</body>
+</html>
