@@ -4,12 +4,57 @@
     <meta charset="UTF-8">
     <title>盒子模型-外边距</title>
     <style type="text/css">
-        .box {
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #7FFFD4;
+            border: solid 10px red;
+            /*
+                外边距：
+                    样式：
+                        margin-left
+                        margin-right
+                        margin-top
+                        margin-bottom
+                   设置各个边的外边距，内容区的背景不会延伸到外边距中
+                   设置左上时，会影响自身元素的位置，而设置右下时，会影响其他元素的位置
+                   设置为负值后，会向反方向移动
+                   设置为auto值，
+                        只对水平方向上的设置有效果，垂直方向上默认为0，水平方向上为最大值
+                        当同时设置左右为auto时，效果为水平居中
+                   简写：
+                        与边框、内边距设置方式同样
+            */
 
+            /*margin-left: 100px;*/
+            /*margin-top: 100px;*/
+            /*margin-bottom: 100px;*/
+            /*margin-bottom: -100px;*/
+            /*margin-left: -100px;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+
+            margin-bottom: 100px;
         }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #9ACD32;
+            border: solid 10px green;
+
+            margin-top: 100px;
+        }
+
+        /*
+            垂直外边距会发生重叠现象
+                兄弟元素之间的相邻外边距，会取最大值，不会取和
+                父子元素之间的相邻外边距，子元素设置外边距，会设置在父元素上
+        */
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
 </body>
 </html>
