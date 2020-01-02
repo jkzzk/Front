@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内联元素的盒模型</title>
+    <style type="text/css">
+        span {
+            background-color: #9ACD32;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #7FFFD4;
+        }
+
+        .s1 {
+            /*
+                内联元素不能设置宽、高
+            */
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*
+                水平方向的内边距
+                    有效果，可以影响布局
+            */
+            padding-left: 100px;
+            padding-right: 100px;
+            /*
+                垂直方向的内边距
+                    有效果，不会影响布局
+            */
+/*            padding-top: 50px;
+            padding-bottom: 50px;*/
+            /*
+                边框可以设置，有效果，但是只影响水平方向上的布局，不会影响垂直方向上的布局
+            */
+            /*border: 50px solid red;*/
+            /*
+                内联元素支持水平方向上的外边距，且不会发生重叠现象，当时不支持垂直方向的外边距
+            */
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <span class="s1">我是一个span</span>
+    <span class="s1">我是一个span</span>
+    <span>我是一个span</span>
+    <span>我是一个span</span>
+</body>
+</html>

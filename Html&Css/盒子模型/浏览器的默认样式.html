@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器的默认样式</title>
+    <style type="text/css">
+
+        /*
+           一些标签，浏览器会默认给这些标签一些样式，在实际开发中，我们不需要这些标签的样式
+           需要去掉这些margin、padding 样式
+
+           使用任意元素选择器 “*” 清除掉元素的默认margin和padding样式,但是其性能不是很好
+        */
+
+        * {
+            margin:0px;
+            padding:0px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #9ACD32;
+        }
+
+        p{
+            background-color: #7FFFD4;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <p>我是一个P标签</p>
+    <p>我是一个P标签</p>
+    <p>我是一个P标签</p>
+    <p>我是一个P标签</p>
+
+    <ul>
+        <li>我是列表</li>
+        <li>我是列表</li>
+        <li>我是列表</li>
+        <li>我是列表</li>
+    </ul>
+</body>
+</html>
