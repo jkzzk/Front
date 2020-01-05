@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+
+    <style type="text/css">
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            float: left;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: left;
+        }
+
+        /*
+            使用浮动属性，是元素脱离文档流的控制，以便进行布局
+                可选值：
+                    none ： 默认值，在文档流中
+                    left ： 脱离文档流，想页面的左侧浮动
+                    right ： 脱离文档流，想页面的右侧浮动
+                只能向左或向右浮动到父元素的边框位置或者其他的浮动元素，浮动停止。
+                如果浮动元素上边为有不浮动的块级元素，那浮动不会超过上边的块元素
+                浮动元素不会超过其上边的浮动兄弟元素
+                浮动元素不会盖住文字，可以用来做一个文字环绕图片的效果
+                浮动元素的默认宽度高度为内容的宽度和高度，内联元素浮动后，变为块级元素
+        */
+
+    </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

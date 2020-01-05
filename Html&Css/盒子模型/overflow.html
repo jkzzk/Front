@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>overflow</title>
+    <style type="text/css">
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            overflow: auto;
+        }
+
+        /*
+            当子元素的大小大于父元素的大小时，默认子元素溢出部分会在父元素之外显示
+                属性： overfolow
+                作用： 控制父元素意外的子元素溢出部分
+                可选值：
+                        - visible ：默认值，溢出的内容可以在父元素外显示
+                        - hidden ：溢出内容会被修剪
+                        - scroll ：会显示一个滚动条来滚动显示溢出内容，有没有溢出都会加载滚动条
+                        - auto ： 会根据是否有溢出来加载滚动条
+        */
+
+        .box2 {
+            width: 100px;
+            height: 400px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
