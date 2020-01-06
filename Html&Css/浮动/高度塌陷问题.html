@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>高度塌陷问题</title>
+    <style type="text/css">
+        .box1 {
+            border: red 10px solid;
+            /*float: left;*/
+            /*display: inline-block;*/
+            overflow: auto;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+
+            float: left;
+            /*
+                解决高度塌陷的方案：
+                    方案一：
+                        原理：
+                            根据W3C标准，页面中每个元素都有隐藏的属性 Block Formatting Context
+                                简称 BFC 块级格式化环境，可以设置其打开或关闭，默认为关闭
+                                开启时：
+                                    1.垂直外边距不会和子元素的垂直外边距重叠
+                                    2.不会被浮动的元素所覆盖
+                                    3.可以包含浮动的子元素
+                            注意：
+                                不支持BFC
+                       方法：
+                            1.设置元素浮动
+                                - 虽然可已开启BFC，但是还是会打乱布局
+                            2.设置元素的绝对定位
+                                同上
+                            3.设置元素 display:inline-block
+                                - 虽然可已开启BFC，但是宽度会丢失
+                            4.将元素的overflow设置为非 visible
+                                - 推荐使用 副作用最小
+                            5.IE6 中的解决办法
+                                - 隐藏属性：hasLayout 该属性的作用和BFC属性类似
+                                所以可以通过开启hasLayout属性，来解决IE6的bug
+                                1. zoom 样式设置为 1  将元素放大1倍
+            */
+        }
+        .box3 {
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
-
+        <!--
+            父元素的高度在默认情况下使用子元素高度撑开，但是当子元素浮动时，父元素的高度发生塌陷现象
+          -->
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
 </body>
 </html>
