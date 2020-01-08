@@ -8,7 +8,13 @@
             border: red 10px solid;
             /*float: left;*/
             /*display: inline-block;*/
-            overflow: auto;
+            /*overflow: auto;*/
+            /*
+                只有IE6及以下可以支持该属性
+                    放大所设置属性，后面的数字就是倍数
+                    来解决高度塌陷问题，副作用几乎没有，但是可用范围小
+            */
+            /*zoom: 1;*/
         }
         .box2 {
             width: 100px;
@@ -41,11 +47,32 @@
                                 - 隐藏属性：hasLayout 该属性的作用和BFC属性类似
                                 所以可以通过开启hasLayout属性，来解决IE6的bug
                                 1. zoom 样式设置为 1  将元素放大1倍
+                                2.指定宽度也可以开启hasLayout\
+                    方案二：
+                        1.为其建立兄弟元素，设置其兄弟元素清除浮动，使其将父元素撑开
+                        这种方式虽然可以解决问题，但是会添加多余的结构，并不完美
+
+                    方案三：
+                        通过css伪类添加用于清浮动的样式
+                        after伪类在父元素的尾部添加块级元素，并清浮动
+                        不会添加多余的结构，副作用极小
+                        但是IE6并不支持该伪类,要是用zoom
+
+
+
             */
         }
         .box3 {
             height: 100px;
             background-color: yellow;
+        }
+        .clear {
+            clear: both;
+        }
+        .box1:after {
+            content: "";
+            display: block;
+            clear: both;
         }
     </style>
 </head>
@@ -55,6 +82,7 @@
           -->
     <div class="box1">
         <div class="box2"></div>
+<!--        <div class="clear"></div>-->
     </div>
     <div class="box3"></div>
 </body>

@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <title>导航条联系</title>
     <style type="text/css">
-
-        .nav {
-
+        * {
+            margin: 0;
+            padding: 0;
         }
-
+        .nav {
+            list-style: none;
+            width: 1200px;
+            margin: 100px auto;
+            overflow: auto;
+            background-color: #5E95F2;
+        }
+        .nav li {
+            float: left;
+            width: 25%;
+        }
+        .nav li a{
+            display: inline-block;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            line-height: 1.5em;
+            width: 100%;
+        }
+        .nav li a:hover {
+            background-color: #c00;
+        }
+        .box {
+            width: 1200px;
+            height: 25px;
+            margin: 110px auto;
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -18,5 +47,6 @@
         <li><a href="#">联系</a></li>
         <li><a href="#">关于</a></li>
     </ul>
+    <div class="box"></div>
 </body>
 </html>

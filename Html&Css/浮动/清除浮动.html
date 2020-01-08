@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动</title>
+    <style type="text/css">
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+            float: left;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+
+            /*
+                box1浮动会影响到box2和box3 的布局，此时可以用clear来清除浮动元素对当前元素的
+                影响
+                    可选值：
+                        none：默认值，不清楚浮动
+                        left： 清除左侧浮动元素对当前元素的影响
+                        right： 清除右侧浮动元素对当前元素的影响
+                        both： 清除两侧浮动元素对当前元素的影响
+                            清除对他影响最大的浮动元素对齐的效果
+            */
+            /*clear: left;*/
+            float: right;
+        }
+        .box3 {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
