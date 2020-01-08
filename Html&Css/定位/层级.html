@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级</title>
+    <style type="text/css">
+        .box1 {
+            width:200px;
+            height: 200px;
+            background-color: #cc0000;
+            position: relative;
+
+            z-index: 2;
+        }
+        .box2 {
+            width:200px;
+            height: 200px;
+            background-color: yellowgreen;
+            position: absolute;
+            /*
+                设置绝对定位会提高该元素的层级，会覆盖该元素位置的其他元素
+                如果其他元素也设置了定位，那么层级会按结构的先后顺序进行排列,a前面的会被后面的盖住
+
+                通过z-index属性，可以设置元素的层级，指定一个正整数来设置元素的层级
+                特点：
+                    1.层级越高，越优先显示
+                    2.对于没有开启定位的元素，不能设置层级
+                    3.父元素的层级再高也不会盖住子元素
+
+                设置透明：
+                    属性：
+                        opacity ： 需要指定 0 - 1 之间的值
+                        1 表示完全不透明
+                        0 表示完全透明
+
+                    兼容性：
+                        IE8及以下版本的IE浏览器使用 filter 滤镜来进行兼容
+                        格式：
+                            filter:alpha(opacity=)
+                                alpha(opacity=50)  阿尔法透明，需要0到100之间的值
+                                    100 表示完全不透明
+                                    50 表示半透明
+                                    0 表示完全透明
+            */
+            left : 100px;
+            top : 100px;
+
+            z-index: 1;
+        }
+        .box3 {
+            width:200px;
+            height: 200px;
+            background-color: skyblue;
+            position: relative;
+
+            top : -50px;
+
+            z-index: 3;
+
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

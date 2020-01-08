@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <style type="text/css">
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+
+            /*
+                定位：
+                    指定的元素拜访到页面的任意位置
+                属性：
+                    通过position属性来设置元素的定位
+                可选值：
+                    static ： 默认值，没有定位，位置在文档流中
+                    relative ： 相对定位
+                    absolute ： 绝对定位
+                    fixed ： 固定定位
+            */
+
+            /*
+                relative： 开启元素的相对定位
+                    特点：
+                        1.如果只开启元素的相对定位，不使用偏移量，那么该元素没有任何变化
+                        2.相对于元素在文档流中原来的位置进行定位
+                        3.相对定位的元素不会脱离文档流
+                        4.相对定位会使元素提升一个层级
+                        5.相对定位不会改变元素的性质，块还是快，内联还是内联，没有脱离文档流
+
+                    当开启了元素的定位时，可以用偏移量来定位元素的位置
+                        left ： 相对于定位点的左侧偏移量
+                        right ： 相对于定位点的右侧偏移量
+                        top ： 相对于定位点的上面偏移量
+                        bottom ： 相对于定位点的下面偏移量
+
+                        通常偏移量使用两个就可以定位元素的位置了，一般为水平方向的和垂直方向上的偏移量
+            */
+            position: relative;
+
+            left: 200px;
+            top: 200px;
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定定位</title>
+    <style type="text/css">
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #cc0000;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+
+            /*
+                fixed : 设置元素 固定定位
+                    特点：
+                        1.大部分特点与绝对定位相同
+                        2.相对于浏览器窗口进行定位
+                        3.固定定位会固定在浏览器窗口的某个位置，不会随滚动条进行滚动
+                    IE6不支持固定定位
+            */
+            position: fixed;
+        }
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body style="height: 5000px;">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
