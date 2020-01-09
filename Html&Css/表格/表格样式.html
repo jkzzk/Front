@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格样式</title>
+    <style type="text/css">
+        table {
+            /*
+                table是一个块元素
+            */
+            margin: 0 auto;
+            width: 300px;
+            /*border: 1px solid black;*/
+            /*
+                table和td之间有默认的距离，可以通过border-spacing来设置
+            */
+            /*border-spacing: 0;*/
+            /*
+                border-collapse : 设置边框合并
+                    collapse 边框合并
+                如果设置了边框合并，那么边框距离自动失效了
+            */
+            border-collapse: collapse;
+
+            background-color: #cc0000;
+        }
+        td,th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <!--   表头标签    -->
+            <th>序号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>住址</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>沙和尚</td>
+            <td>男</td>
+            <td>流沙河</td>
+        </tr>
+    </table>
+</body>
+</html>

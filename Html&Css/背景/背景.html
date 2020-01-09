@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style type="text/css">
+        .box {
+            width: 1000px;
+            height: 1000px;
+            margin: 50px auto;
+            /*background-color: #9ACD32;*/
+            /*
+                用background-image : 来设置元素的背景图片
+                    语法：background-image: url("相对路径")
+                    特点：
+                        1.如果元素大小小于背景图片大小，默认显示图片左上角
+                        2.如果元素大小大于背景图片大小，图片会平铺以充满元素
+                        3.可以同时设置背景颜色和背景图片，背景颜色在背景图片之后
+                            一般设置背景图片都会设置一个背景颜色
+            */
+            /*background-image: url(../img/1.jpg);*/
+            /*
+                background-repeat : 设置是否或如何设置背景图片
+                    可选值：
+                        repeat ： 默认值，背景图片会双方向重复
+                        no-repeat ： 背景图片不重复
+                        repeat-x ： 背景图片水平重复
+                        repeat-y : 背景图片垂直重复
+
+            */
+            /*background-repeat: no-repeat;*/
+
+            /*
+                background-position : 定位背景图片
+                    可选值：
+                        1.top left right bottom center
+                            用其中两个值来定位 如： left center
+                            用其中一个值来定位 如 ： left 第二个值默认为center
+                        2.偏移量
+                            xpos ： 水平偏移量 正负值均可，正直向右，负值向左移动
+                            ypos ： 垂直偏移量 正负值均可，正直向下，负值向上移动
+
+            */
+            /*background-position: 100px 10px;*/
+
+            /*
+                background-attachment : 设置背景图片是随滚动条进行滚动
+                    可选值：
+                        scroll : 默认值，背景图片会随着滚动条滚动
+                        fixed : 背景图片不会随着滚动条滚动
+                            一般设置给body元素，不会设置给其他元素
+            */
+            /*overflow: auto;*/
+            /*background-attachment: fixed;*/
+
+            /*
+                背景简写属性：
+                    brackground :
+                        - 可以设置所有的背景样式
+                        - 没有顺序的要求
+                        - 没有数量的要求
+            */
+        }
+        .box1 {
+            width: 2px;
+            height: 1200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">1</div>
+    </div>
+</body>
+</html>
