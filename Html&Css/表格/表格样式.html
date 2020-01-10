@@ -21,41 +21,111 @@
                 如果设置了边框合并，那么边框距离自动失效了
             */
             border-collapse: collapse;
-
-            background-color: #cc0000;
         }
+
+        /*
+            隔行变色
+        */
+        tr:nth-child(even) {
+            background-color: deepskyblue;
+        }
+
+        /*
+            移入变色
+        */
+        tr:hover {
+            background-color: #9ACD32;
+        }
+
         td,th {
             border: 1px solid black;
         }
+        /*
+            thead标签 ：
+                无论结构写在什么位置，显示时永远在表头位置
+            tbody标签 ：
+                如果不写tbody，浏览器默认会将tbody加入，所以table的子元素为tbody
+                不为tr
+            tfoot标签 ：
+                无论结构写在什么位置，显示时永远在表格尾部位置
+        */
     </style>
 </head>
 <body>
     <table>
-        <tr>
-            <!--   表头标签    -->
-            <th>序号</th>
-            <th>姓名</th>
-            <th>性别</th>
-            <th>住址</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>孙悟空</td>
-            <td>男</td>
-            <td>花果山</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>猪八戒</td>
-            <td>男</td>
-            <td>高老庄</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>沙和尚</td>
-            <td>男</td>
-            <td>流沙河</td>
-        </tr>
+        <thead>
+            <tr>
+                <!--   表头标签    -->
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>住址</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>合计</td>
+                <td>西天取经</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>孙悟空</td>
+                <td>男</td>
+                <td>花果山</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>猪八戒</td>
+                <td>男</td>
+                <td>高老庄</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>沙和尚</td>
+                <td>男</td>
+                <td>流沙河</td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
