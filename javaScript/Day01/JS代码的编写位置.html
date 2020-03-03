@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS代码的编写位置</title>
+    <!--
+        外部引用JS
+        在不同的页面可以同时引用，还可以利用到浏览器的缓存机制
+
+        scirpt标签一旦引入了外部的JS文件，就不能再其中写JS代码了，写了也没用
+    -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <!--    需要将所有代码写进script标签中-->
+    <script type="text/javascript">
+        // alert("我是script标签中的JS代码！！！");
+    </script>
+</head>
+<body>
+    <!-- 可以将JS代码编写到html标签的属性中
+        onclick属性，当点击按钮时，执行该JS代码
+        href 属性，当点击超链接时，执行JS代码
+     -->
+    <button onclick="alert('王彩霞是小可爱！！');">请点击王彩霞</button>
+
+    <a href="javascript:alert('王彩霞是小可爱！！');">请点击王彩霞</a>
+</body>
+</html>
