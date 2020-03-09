@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据类型_Number</title>
+    <script type="text/javascript">
+        /*
+        * 在JS中所有数字类型都是Number类型
+        *   -整数
+        *   -浮点数
+        * */
+        /*
+        * 使用typeOf输出变量的类型
+        * 语法：typeOf 变量
+        * String类型 输出 string
+        * Number类型 数据 number
+        * */
+        var a = 123;
+        var b = "123";
+
+        console.log(a);
+        console.log(typeof a);
+        console.log(b);
+        console.log(typeof b);
+
+        // 数字类型的特殊值：
+        console.log(Number.MAX_VALUE); //1.7976931348623157e+308
+        /*
+        * 如果使用的Number 超过了最大值，则会返回一个Infinity
+        *   Infinity : 表示正无穷
+        *   -Infinity ： 表示负无穷
+        *       typeof Infinity 返回 number
+        * */
+        console.log(typeof  Infinity);
+
+        /*
+        * NaN : Not a Number  不是一个数字
+        *   typeof NaN 返回 number
+        * */
+
+        console.log(typeof NaN);
+
+        console.log(Number.MIN_VALUE); //5e-324
+
+        /*
+        * JS 中整数的运算是基本没有问题的
+        *
+        * */
+        var c = 1234567 + 7654321;
+        console.log(c); //8888888
+
+        /*
+        * JS 中浮点数的运算会不精确
+        *
+        * */
+        var d = 0.1 + 0.2;
+        console.log(d);  // 0.30000000000000004
+    </script>
+</head>
+<body>
+
+</body>
+</html>
