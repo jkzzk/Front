@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强制数据类型转换</title>
+    <script type="text/javascript">
+        /*
+        * 强制类型转换-- 讲一个类型的值转换为其他类型的值
+        *   将一个类型的值转换为：
+        *       String 、 Boolean 、Number
+        * */
+
+        /*
+        * 将其他类型转换为 Number
+        *       方式一 ： 使用Number函数
+        *               字符串 -- > Number
+        *                   1.如果是纯数字的字符串，将其直接转换为数字
+        *                   2.如果字符串中有非数字内容则转为NaN
+        *                   3.空字符串与空白字符串则转换为0
+        *               布尔值 -- > Number
+        *                   true -- > 1   false -- > 0
+        *               null -- > Number
+        *                   null 转为 0
+        *               undefinedd -- > Number
+        *                   undefined 转为  NaN
+        *       方式二 ： 使用parseInt 和 parseFloat 方法，专门用于字符串，如果对非字符
+        *               串使用，会将其转换为字符串，在转换为Number
+        *               parseInt 可以将字符串中开头数字字符串解析出来，遇到非数字停止解析
+        *               parseFloat
+        *                   - 可以处理有效的整数与小数
+        * */
+        var a = "123";
+
+        a = false;
+
+        a = null;
+
+        a = undefined;
+
+        a = "123px";
+        a = parseInt(a);
+
+        a = "123.456px";
+        a = parseFloat(a);
+
+        console.log(typeof a);
+        console.log(a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
