@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性名与属性值</title>
+    <script type="text/javascript">
+        /*
+        * 属性名 ： 不强制要求遵守标识符的规范，但是如果使用特殊的属性名不能使用点的方式
+        *       但是还是要遵守
+        * 语法：  对象["属性名"] = 属性值
+        *   中括号的操控方式更加灵活，可以在中括号内传一个变量，变量值为字符串属性名
+        * 属性值  ： 是任意数据类型
+        *   in检测 属性值 是否在 该对象中  有 返回 true  没有  返回 false
+        *
+        * */
+        var obj = new Object();
+
+        obj["123"] = 123;
+
+        var n = "123";
+
+        console.log(n in obj);  //true
+    </script>
+</head>
+<body>
+
+</body>
+</html>
