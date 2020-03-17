@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的实参类型</title>
+    <script type="text/javascript">
+        /*
+        * 实参可以是基本数据类型，也可以是引用数据类型
+        * 实参也可以是一个函数
+        * 函数对象作为实参，不加括号，表示函数对象本身，加了括号表示调用函数后的返回值
+        * */
+        function sum(a,b) {
+            return a + b;
+        }
+
+        function useSum(fun) {
+            alert(fun(1,2));
+        }
+
+        useSum(sum);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的参数</title>
+    <script type="text/javascript">
+        /*
+        * 函数可以指定多个形参
+        * 在调用函数式，指定实参,实参会赋值给对应的形参
+        * 调用时，不会检查参数的类型和数量
+        *   实参小于形参时，没有对应的形参值为undefined
+        *   实参可以是任何的数据类型
+        * */
+        function sum(a,b) {
+            console.log(a+b);
+        }
+
+        sum(1,2);
+        sum(true,false);
+        sum(1,"jkzzk");
+        sum(123,456,789);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
