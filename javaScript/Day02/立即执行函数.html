@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立即执行函数</title>
+    <script type="text/javascript">
+        /*
+        * 定义完立即调用的函数
+        *   语法 ： (funciton(参数1,.....,参数n) {})(实参1,....,参数n);
+        *   注意 ：
+        *       1.函数体要用括号包起来
+        * */
+        let sum = (function(a,b) {
+            return a+b;
+        })(1,2);
+
+        console.log(sum);  // 3
+    </script>
+</head>
+<body>
+
+</body>
+</html>

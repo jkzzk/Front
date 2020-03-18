@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的返回值类型</title>
+    <script type="text/javascript">
+        /*
+        * 返回值是任意类型
+        *   基本数据类型与引用数据类型
+        *   可以返回函数
+        * */
+
+        function fun() {
+            return {name : 'jkzzk'};
+        }
+
+        function fun1() {
+            function fun2() {
+                alert("我是fun2");
+            }
+
+            return fun2;
+        }
+
+        var obj = fun();
+
+        console.log(obj.name);
+
+        let fun2 = fun1();
+        fun2();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

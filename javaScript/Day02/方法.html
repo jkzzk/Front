@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法</title>
+    <script type="text/javascript">
+        /*
+        *   如果对象的属性是一个函数，那么该函数称为对象的方法
+        * */
+        var obj = new Object();
+        obj.name = "zzk";
+        obj.age = 24;
+
+        //对象的属性值可以是任何值
+        obj.sayNmae = function() {
+            alert(obj.name);
+        };
+
+        obj.sayNmae();
+
+        /*
+        * 枚举对象总的属性
+        *   for...in语句，对象有几个属性，就执行几次
+        *       每次执行会将属性名称赋值给变量
+        * */
+        var obj = {
+            name : "jkzzk",
+            age : 18,
+            gender : "男",
+            address : "包头"
+        };
+
+        // 枚举对象属性
+        for(var attr in obj) {
+            console.log(attr);
+            console.log(obj[attr]);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
