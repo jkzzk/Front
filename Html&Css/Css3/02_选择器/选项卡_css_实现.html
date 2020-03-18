@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡_css_实现</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /*
+            为浮动选项卡添加一个父级标签，是的选项卡在父级元素内浮动
+        */
+        span {
+            display: block;
+            padding-left: 5px;
+        }
+        /*
+            为父级元素清楚浮动影响效果，使其不会影响其他元素布局
+        */
+        span::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        span > a {
+            float: left;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            width: 100px;
+            height: 50px;
+            background-color: deepskyblue;
+            margin: 5px;
+        }
+
+        div {
+            width: 400px;
+            height: 200px;
+            border: black solid 1px;
+            margin-left: 10px;
+            margin-top: 20px;
+            background-color: deeppink;
+            font : 60px "微软雅黑";
+            text-align: center;
+            line-height: 200px;
+            display: none;
+        }
+
+        div:target {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <span>
+        <a href="#div1">选项卡1</a>
+        <a href="#div2">选项卡2</a>
+        <a href="#div3">选项卡3</a>
+    </span>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+</body>
+</html>

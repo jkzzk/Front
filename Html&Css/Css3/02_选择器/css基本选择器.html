@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css基本选择器</title>
+    <style type="text/css">
+        /*
+            1.id选择器 #
+            2.类选择器 .
+            3.元素选择器 元素名
+            4.通配符选择器 *
+            5.属性选择器 属性以及属性值
+                属性存在   div[name] 不要加引号
+                值  div[name="value"]  值必须加引号
+                以空格分隔的值中至少包含一次  div[name~="value"]  ==> <div name="value value1"></div>
+                值存在或者以值加-开头  div[name|="value"]  ==> <div name="value-value1"></div>或者<div name="value"></div>
+                以值开头 div[name^="value"]  ==> <div name="valueValue1">  ^ : 脱字符
+                以值结尾 div[name$="value"]  ==> <div name="value1   value">
+                包含值 div[name*="value"]  ==> <div name="valueValue1">
+            6.后代选择器 空格
+            7.分组选择器 逗号（结合符）
+
+            扩展选择器：
+                1.子代选择器  >   直接子代，不代表后代不会继承其父代可继承css属性
+                2.相邻兄弟选择器 + 紧跟的兄弟元素
+                3.通用兄弟选择器 ~ 所有的之后的兄弟元素
+
+            伪类与伪元素选择器 (伪类与伪元素是为了css拿到DOM树以外的元素与元素状态)
+                1.链接伪类（只能放到a标签上使用）
+                    ：link  链接为点击状态
+                    ：visited  链接被点击后状态
+                        只有三个属性可以被接受
+                            color
+                            background-color
+                            border-color
+                    ：target 选择id与uri片段相同的元素
+                2.动态伪类
+                    ：hover  鼠标移入状态
+                    ：active 鼠标点击状态
+                3.表单伪类
+                    ：enabled 启用的表单
+                    ：disabled 禁用的表单
+                    ：checked 选中的表单
+                    ：focus 获取焦点的表单
+                4.结构伪类
+                    ：nth-child(index)  选中索引位置的子元素  所有的元素中第一个符合要就的元素
+                        :first-child  选中所有子元素第一个子元素
+                        :last-child 选中所有子元素最后一个子元素
+                        :nth-last-child(index) 倒序选中索引位置的子元素
+                        :only-child 只有一个子元素
+                    :nth-of-type(index) 选中索引位置的子元素 所有的符合要求的元素中的第一个
+                        :first-of-type 选中所有子元素第一个子元素
+                        :last-of-type 选中所有子元素最后一个子元素
+                        :nth-last-type(index) 倒序选中索引位置的子元素
+                        :only-of-type 只有一个子元素
+
+                     区别 ：
+                        nth-of-type以元素为中心
+
+                    :empty 内容为空的元素，什么都没有，空格也没有
+                    :not(选中元素)  排除某个选中元素
+                    index值 ： 可以是大于零的整数 、 even偶数  odd奇数  变量n
+                5.伪元素
+                    ::after 在元素之后
+                    ::before 在元素之前
+                    ::first-letter 第一个字符
+                    ::first-line  第一行
+                    ::selection  光标选中
+
+                其他选择器
+                    ：root  选择根元素
+            注意： 优先级是css声明的优先级，不是选择器的
+
+            css声明的优先级 ：
+                1.选择器的特殊性
+                    内联 1,0,0,0
+                    id  0,1,0,0
+                    类、属性、伪类 0,0,1,0
+                    元素与伪元素 0,0,0,1
+                    通配符 0,0,0,0
+                    结合符 没有任何卵用
+                    集成没有特殊性
+                2.重要声明 (css 2.1)
+                    !important  写在分号之前
+                3.来源
+                    读者
+                    开发人员
+                    用户代理
+
+                    优先级：
+                        读者的重要声明
+                        开发人员的重要声明
+                        读者的声明
+                        开发人员的声明
+                        用户代理的声明
+                4.优先级的计算
+                    1.选择器的特殊性会影响声明的优先级
+                    2.优先级计算分为两组，一组为无重要声明，一组为重要声明，先组内按照特殊性比较
+                        最后两组比较，重要声明比其他声明更优先
+                    3.继承的特殊性比统配还小
+                    4.优先级先按找来源计算，再按照选择器特殊性和申明是否重要来计算，最后按照顺序
+        */
+    </style>
+</head>
+<body>
+
+</body>
+</html>
