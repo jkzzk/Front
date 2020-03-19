@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this关键字</title>
+    <script type="text/javascript">
+        /*
+        *   this关键字
+        *       调用函数时，浏览器会默认给函数传递一个参数，这个参数就是 this
+        *       this指向的是一个对象，该对象为函数上下文对象，根据调用方式的不同
+        *       this会指向不同的对象
+        *   调用函数，this为window全局对象
+        *   调用方法，this为调用该方法的对象
+        * */
+
+        function fun() {
+            console.log(this);
+        }
+
+        var obj = {
+            name : "zzk",
+            sayName : fun
+        };
+
+        obj.sayName();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

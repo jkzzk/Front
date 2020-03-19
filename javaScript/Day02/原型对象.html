@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型对象</title>
+    <script type="text/javascript">
+        /*
+        * 原型 prototype
+        *   我们所创建的每一个函数，浏览器解析器都会想函数对象中添加一个prototype
+        *   当该函数作为构造函数调用时，其创建的每一个对象都会有一个隐含的prototype属性
+        *   可以通过对象的__proto__访问该属性
+        * 所有同一个类的实例都可以访问到该prototype
+        * 实例在访问属性或方法时，现在本实例里寻找，找不到，在到prototype中去找，还没有在去
+        * 原型的原型中找，直到找到Object类的原型，Object类的原型没有原型了
+        *
+        * 使用hasOwnProperty(属性名称)来检测对象自身是否有某个属性，排除prototype
+        * */
+
+        function MyClass() {
+
+        }
+
+        MyClass.prototype.a = "我是原型中的a";
+
+        MyClass.prototype.fun = function () {
+            console.log(this.a);
+        };
+
+        var myClass1 = new MyClass();
+        myClass1.a = "我是myClass1中的a";
+
+        var myClass2 = new MyClass();
+
+        console.log(myClass1.a);
+        console.log(myClass2.a);
+
+        myClass1.fun();
+        myClass2.fun();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

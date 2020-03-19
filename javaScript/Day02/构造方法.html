@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造方法</title>
+    <script type="text/javascript">
+        /*
+        * 构造函数  == 普通函数
+        *     - 习惯首字母大写
+        *     - 调用方式不一样，使用new 来调用
+        * 构造函数的执行流程
+        *   1.创建一个新的对象
+        *   2.将this设置为新建的对象
+        *   3.执行函数中的代码
+        *   4.将新建的对象作为返回值返回
+        *
+        * 使用同一个构造函数构造的对象，称为一类对象
+        *
+        * instanceof  可以检查一个对象是否是类的实例
+        * 所有的对象都是Object的后代
+        * */
+        function Person() {
+            this.name = "wcx";
+        }
+
+        var person = new Person();
+
+        console.log(person.name);
+        console.log(person instanceof Person)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
