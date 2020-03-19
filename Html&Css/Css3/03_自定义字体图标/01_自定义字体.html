@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_自定义字体</title>
+    <style type="text/css">
+        /*
+            自定义字体 ：
+                @font-face{
+                    font-family : "自定义字体名称",
+                    src : url(字体地址)
+                }
+                - 自定义字体必须定义在样式表内，规则外
+
+             使用矢量图片作为某些字符的字体，然后使用自定义字体将某些字符显示为该图片
+             形成一种自定义字体图标
+        */
+        @font-face {
+            font-family: "zzk";
+            src : url(font/SNAP____.TTF);
+        }
+        #test {
+            font: 50px zzk;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        I am a div;
+    </div>
+</body>
+</html>
