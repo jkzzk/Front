@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模糊背景</title>
+    <style type="text/css">
+        #warp {
+            width: 220px;
+            height: 70px;
+            background: rgba(0,0,0,.5);
+            margin: 50px auto;
+            position: relative;
+        }
+        #warp img {
+            margin: 12px 0 0 12px;
+        }
+        #warp #bg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: url("img/bg.jpg") no-repeat;
+            background-size: 100% 100%;
+            filter: blur(10px);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <img src="img/hi.png" alt="Head_Image">
+        <div id="bg"></div>
+    </div>
+</body>
+</html>

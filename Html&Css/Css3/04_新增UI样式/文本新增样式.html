@@ -12,10 +12,59 @@
                     color ： 阴影的颜色 可选
                     offset-x、offset-y ： 阴影的偏移量
                     blur-radis ： 模糊半径 默认为0 越大阴影就越大
+                注意 ： 有顺序的，数字必须紧挨着
+            -webkit-text-stroke : 文字描边，只有webkit内核支持该样式
+            direction : 控制文字方向 默认值 ltr  可继承
+                值：
+                    ltr ： 默认值，从左向右显示
+                    rtl ： 从右向左显示
+            unicode-bidi : 设置文本显示方向 默认值 normal  可继承
+                值：
+                    normal ： 默认值，正常显示
+                    embed : 回复文字显示方向，嵌套在bidi-override样式元素内部，用于恢复部分的文字显示方向，恢复为正常
+                    bidi-override ： 反向显示,严格按照direction指定的方向进行文字重排
+            text-overflow : 设置文本超出后的显示样式
+                值：
+                    clip ： 默认值，修剪
+                    ellipsis : 显示省略号来修剪文本
+                    string ： 显示指定文本来修改件文本  只在火狐中有用
+                注意 ：
+                    1.应用元素必须是块级元素
+                    2.要和overflow：hidden; white-space:nowrap;连用，当然文本要超出
         */
+        #stroke {
+            text-align: center;
+            font-size: 200px;
+            color: white;
+            -webkit-text-stroke : 4px purple;
+        }
+        #direct {
+            text-align: center;
+            font-size: 200px;
+            color: deeppink;
+            direction:rtl;
+            unicode-bidi: bidi-override;
+        }
+        .textover {
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            border: solid 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ">>";
+        }
     </style>
 </head>
 <body>
-
+    <h1 id="stroke">张泽昆</h1>
+    <hr>
+    <h1 id="direct">12
+        <span style="unicode-bidi: embed;">34</span>
+        56</h1>
+    <hr>
+    <div class="textover">
+        用overflow:eclipse，这个属性。可能在低版本浏览器会有些兼容需要解决。此外还有注意white-space，word-brak,word-wrap这几个值的设定。
+    </div>
 </body>
 </html>
