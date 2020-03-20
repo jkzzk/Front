@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组简介</title>
+    <script type="text/javascript">
+        /*
+        *   数组（Array）
+        *       - 数组也是一个对象
+        *       - 可以存储一些值，任何值，对象、数组、函数都可以
+        *       - 创建一个数组并赋值
+        *           var 变量 = new Array(值,值,值,...,值);
+        *           注意： 当参数只有一个时，代表数组长度
+        *       - 添加元素
+        *           数组[index] = 值;
+        *       - 读取元素
+        *           数组[index];
+        *           读取索引不存在的，会返回undefined
+        *       - 使用字面量创建数组并赋值
+        *           var 变量 = [值,值,值,...,值];
+        *       - 常用方法与属性
+        *           1.数组的长度
+        *               - 可以使用length属性来获取长度,对于不连续数组，会返回最大索引+1
+        *               - 可以设置length属性，如果设置长度大于实际的长度，剩余索引，会是空置
+        *                   如果小于一些值就会获取不到,被删除
+        *               可以用 arr[arr.length] = ...
+        *           2.push(值,值,值,...,值)方法
+        *               - 向数组末尾添加值或一些值，并返回添加后长度，会影响原数组值
+        *           3.pop() 方法
+        *               - 删除并返回数组的最后一个元素，会影响原数组值
+        *           4.unshift(值,值,值,...,值) 方法
+        *               - 向数组开头添加值或一些值，并返回添加后长度，会影响原数组值
+        *           5.shift() 方法
+        *               - 删除并返回数组的第一个元素，会影响原数组值
+        *           6.遍历数组方法
+        *               1].for循环遍历数组
+        *               2].forEach()方法，该方法只支持IE8以上，还有其他浏览器
+        *                   参数为一个回调函数，该函数的参数为：
+        *                       - 参数1 ： 数组的元素
+        *                       - 参数2 ： 数组的索引
+        *                       - 参数3 ： 数组对象
+        *           7.slice(start,end)
+        *              - 从某个以后的数组返回选定的元素， 不会影响原数组值
+        *              - 参数
+        *                   start 开始索引 可传负值，代表倒数
+        *                   end 结束索引  可选， 不传，则为从开始一直截取到最后 可传负值，代表倒数
+        *               返回子数组，不包括结束索引位置
+        *           8.splice 从某个数组中删除一些元素，添加一些新元素，会影响原数组值
+        *               - 参数：
+        *                   参数 1： 删除位置的开始索引
+        *                   参数 2： 删除的长度
+        *                   参数 3（多个值）： 替换删除元素的多个值
+        *               - 功能1 ： 删除数组中的元素  splice(start,length)  返回被删除的元素
+        *               - 功能2 ： 替换数组的元素 splice(start,length,值,值,值,...,值) 返回被替换的元素
+        *               - 功能3 ： 插入数组的元素 splice(start,0,值,值,值,...,值) 返回空
+        *          9.
+        * */
+        var arr = new Array();
+
+        console.log(arr); //Array(0)
+        console.log(typeof arr); //object
+
+        arr[0] = 10;
+        arr[1] = 12;
+        arr[2] = 13;
+        arr[3] = 14;
+
+        console.log(arr[0]);
+        console.log(arr.length);
+
+        arr.length = 3;
+
+        console.log(arr[3]);
+        console.log(arr.length);
+
+        var arr = ["zzk","xbzzk","xxzzk","sxzzk","mnzzk","slzzk","hkzzk","dszzk","dnzzk","jkzzk"];
+
+        let arrSon = arr.slice(0,3);
+
+        console.log(arrSon);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
