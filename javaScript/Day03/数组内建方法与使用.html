@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数组简介</title>
+    <title>数组内建方法与使用</title>
     <script type="text/javascript">
         /*
         *   数组（Array）
@@ -53,7 +53,19 @@
         *               - 功能1 ： 删除数组中的元素  splice(start,length)  返回被删除的元素
         *               - 功能2 ： 替换数组的元素 splice(start,length,值,值,值,...,值) 返回被替换的元素
         *               - 功能3 ： 插入数组的元素 splice(start,0,值,值,值,...,值) 返回空
-        *          9.
+        *          9.concat 连接两个或多个数组,并返回新数组  不会影响原数组值
+        *          10.join 将数组转换为字符串并返回 不会影响原数组值
+        *               - 参数 字符串 指定元素的连接符号 默认为逗号 ,
+        *          11.reverse 反转数组 会影响原数组值
+        *          12.sort 对数组中的元素进行排序  会影响原数组值
+        *               - 默认按照Unicode编码进行排序，对于数字也会按照该规则进行排序
+        *               参数为回调函数，该回调函数有两个形参
+        *                   形参1 ： 当前元素
+        *                   形参2 ： 当前元素的后一个元素
+        *               回调函数的返回值 ：
+        *                   0 两个元素相等 不交换位置
+        *                   大于0 元素1大于元素2 交换位置
+        *                   小于0 元素1小于元素2 不交换位置
         * */
         var arr = new Array();
 
@@ -78,6 +90,16 @@
         let arrSon = arr.slice(0,3);
 
         console.log(arrSon);
+
+        var arr2 = ["wdzzk"];
+
+        let consatArr = arr.concat(arr2);
+
+        console.log(consatArr);
+
+        arr.splice(10,0,arr2);
+
+        console.log(arr);
     </script>
 </head>
 <body>

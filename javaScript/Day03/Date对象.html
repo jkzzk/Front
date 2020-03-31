@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+    <script type="text/javascript">
+        /*
+        * Date 对象
+        *   - 日期时间对象
+        *   方法 ：
+        *       1.getDate()  获取当前日期对象是几号  1~31
+        *       2.getDay()  获取当前日期对象是星期几  0~6  0表示周日、
+        *       3.getMonth() 获取当前日期对象是第几月 0~12  0表示一月
+        *       4.getFullYear() 获取当前日期对象的年份
+        *       5.getTime() 获取当前日期对象的时间戳 从1970年1月1号0时0分0秒到日期对象所表示的时间之间的毫秒数
+        *       Date.now() 获取当前日期时间戳
+        * */
+
+        //当前时间
+        let d = new Date();
+        //可以传递一个时间字符串
+        //日期格式  月/日/年  时:分:秒
+        let d2 = new Date("12/03/2016 10:10:10");
+
+        let d3 = new Date("01/03/2016 10:10:10");
+
+        console.log(d);
+        console.log(d2);
+        console.log(d3.getMonth());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
