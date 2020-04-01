@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包装类</title>
+    <script type="text/javascript">
+        /*
+        * JS 中提供了3中包装类，来将基本数据类型转换为引用数据类型
+        *   String
+        *       - 将基本数据类型字符串转换为String
+        *   Number
+        *       - 将基本数据类型数值转换为Number
+        *   Boolean
+        *       - 将基本数据类型布尔值转换为Boolean
+        *
+        *   实际开发中基本不会使用，浏览器自己会使用这些方法，将基本数据类型临时转换为对象，供我们调用
+        * */
+        let num = new Number(3);
+        console.log(num);
+        console.log(typeof num);
+        let str = new String("123");
+        console.log(str);
+        console.log(typeof str);
+        let bool = new Boolean(true);
+        console.log(bool);
+        console.log(typeof bool);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
