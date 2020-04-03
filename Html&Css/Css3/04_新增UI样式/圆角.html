@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆角</title>
+    <style type="text/css">
+        /*
+            圆角
+            border-radius 默认为0 不可继承
+                值：
+                    顺时针指定各个角的圆角半径，可以使用百分比，相对于宽
+                    第一个值之前可以指定短半径用斜杠分开，来画椭圆
+        */
+        #test {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border:1px black solid;
+            background-color: deeppink;
+            border-radius: 20px/40px 80px 20px 60px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+</html>
