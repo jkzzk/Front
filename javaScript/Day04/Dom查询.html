@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom查询</title>
+    <link rel="stylesheet" href="styles/style-dom.css">
+</head>
+<body>
+    <div id="outer">
+        <div class="left">
+            <div class="l_top">
+                <div class="title">你喜欢那个城市？</div>
+                <ul class="options">
+                    <li id="bj">北京</li>
+                    <li>上海</li>
+                    <li>东京</li>
+                    <li>首尔</li>
+                </ul>
+                <div class="title">你喜欢那款单机游戏？</div>
+                <ul class="options">
+                    <li>红警</li>
+                    <li>实况</li>
+                    <li>极品飞车</li>
+                    <li>魔兽</li>
+                </ul>
+                <div class="title">你的手机操作系统是？</div>
+                <ul class="options">
+                    <li>IOS</li>
+                    <li>Android</li>
+                    <li>Windows Phone</li>
+                </ul>
+            </div>
+            <div class="l_bottom">
+                <span>gender :
+                    <label>
+                        <input class="hello" type="radio" name="gender" checked="checked" value="male">
+                        <span></span>
+                    </label>
+                    Male
+                    <label>
+                        <input class="hello" type="radio" name="gender" value="female">
+                        <span></span>
+                    </label>
+                    Female
+                </span>
+                <span>name :
+                    <input type="text" name="username" value="jkzzk">
+                </span>
+            </div>
+        </div>
+        <div class="right">
+            <button id="btn1">查找#bj节点</button>
+            <button id="btn2">查找所有li节点</button>
+            <button id="btn3">查找所有name=gender的节点</button>
+            <button id="btn4">查找所有#city下所有li节点</button>
+            <button id="btn5">查找所有#city的子节点</button>
+            <button id="btn6">查找#phone的第一子节点</button>
+            <button id="btn7">查找#bj的父节点</button>
+            <button id="btn8">查找#android的前一个兄弟节点</button>
+            <button id="btn9">查找#username的value值属性</button>
+            <button id="btn10">设置#username的value值属性</button>
+            <button id="btn11">查找#bj的文本值</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    /*
+    *   通过documnet对象调用
+    *       1.getElementById()  通过Id属性获取元素对象
+    *       2.getElementsByTagName() 通过标签名称获取一组元素对象
+    *       3.getElementsByName() 通过name属性获取一组元素对象
+    * */
+
+    /*
+    * 查找#bj节点
+    * */
+    let btn1 = document.getElementById("btn1");
+    btn1.onclick = function(){
+        let bj = document.getElementById("bj");
+        alert(bj.innerHTML);
+    };
+    /*
+    * 查找所有li节点
+    * */
+    let btn2 = document.getElementById("btn2");
+    btn2.onclick = function(){
+        let lis = document.getElementsByTagName("li");  // 返回数组对象
+        for(let i = 0 ; i < lis.length; i++) {
+            alert(lis[i].innerHTML);
+        }
+    };
+    /*
+    * 查找所有name=gender的节点
+    * */
+    let btn3 = document.getElementById("btn3");
+    btn3.onclick = function(){
+        let genders = document.getElementsByName("gender");  // 返回数组对象
+        for(let i = 0 ; i < genders.length; i++) {
+            /*
+            *   自结束标签获取innerHTML没有意义
+            *   属性直接  .属性名
+            *   唯独  class 属性 不能采用此种方式  class 是JS的关键字  用className代替
+            * */
+            alert(genders[i].value);
+            alert(genders[i].className);
+        }
+    };
+
+</script>
+</html>

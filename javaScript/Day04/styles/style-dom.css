@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #263238;
+}
+li {
+    list-style: none;
+}
+/*
+    外部容器样式
+*/
+#outer {
+    width: 60%;
+    height: 70%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #B2CCD6;
+}
+/*
+    左侧容器
+*/
+#outer .left {
+    width: 40%;
+    height: 85%;
+    float: left;
+    box-sizing: border-box;
+    margin: 4% 0 0 15%;  /*根据宽度变化*/
+}
+/*
+    左侧容器上部
+*/
+#outer .left .l_top {
+    width: 90%;
+    height: 60%;
+    border: 1px solid #3B4950;
+    box-sizing: border-box;
+    margin: 5%;  /*根据宽度变化*/
+    padding: 5%;
+}
+/*
+    左侧容器上部  标题
+*/
+#outer .left .l_top .title {
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding-left: 20px;
+    background-color: #263238;
+    font-size: 20px;
+    color: aqua;
+}
+/*
+    左侧容器上部  选项
+*/
+#outer .left .l_top .options {
+    width: 90%;
+    box-sizing: border-box;
+}
+#outer .left .l_top .options li{
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    margin: 10px 10px;
+    padding:0 20px;
+    color: white;
+    background-color: #263238;
+}
+#outer .left .l_top .options li:hover {
+    color: aqua;
+}
+/*
+    左侧容器下部
+*/
+#outer .left .l_bottom {
+    width: 90%;
+    height:30%;
+    border: 1px solid #3B4950;
+    box-sizing: border-box;
+    margin: 5%;  /*根据宽度变化*/
+}
+/*
+    左侧容器下部 单选框
+*/
+#outer .left .l_bottom span {
+     width: 90%;
+     height: 50px;
+     line-height: 50px;
+     display: block;
+     margin: 5%;
+     font-size: 20px;
+}
+/*
+    左侧容器下部 自定义单选框
+*/
+#outer .left .l_bottom span label {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    margin: 0 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+}
+/*
+    为了去除不必要的继承属性，采取的子元素占满父元素容器的方案
+*/
+#outer .left .l_bottom span label span {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+/*
+    将radio隐藏
+*/
+#outer .left .l_bottom span label input[type="radio"] {
+    position: absolute;
+    left: -20px;
+    top: -20px;
+}
+/*
+    点击时，改变背景颜色
+*/
+#outer .left .l_bottom span label input[type="radio"]:checked + span {
+    background-color: #263238;
+}
+/*
+    单行文本框，样式设置
+*/
+#outer .left .l_bottom span input[type="text"] {
+    display: inline-block;
+    width: 350px;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 10px 20px;
+    padding: 0 50px;
+    background-color: #263238;
+    border: #263238 1px solid;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+}
+/*
+    单行文本框 获取焦点，样式设置
+*/
+#outer .left .l_bottom span input[type="text"]:focus {
+    border: #007C70 5px solid;
+}
+
+/*
+    右侧容器
+*/
+#outer .right {
+    width: 40%;
+    height: 85%;
+    float: left;
+    box-sizing: border-box;
+    margin: 4% 0 0 0;
+    padding: 7% 5% 5% 2%;
+}
+/*
+    右侧容器 的按钮
+*/
+#outer .right button {
+    width: 400px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    font-size: 20px;
+    margin: 10px;
+    border: #F78C6C 1px solid;
+    background-color: #F78C6C;
+    border-radius: 5px;
+    color: white;
+}
+
+#outer .right button:hover {
+    border: #C3E88D 3px solid;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换图片</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #outer {
+            width: 610px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            padding: 10px 10px 10px 20px;
+            background-color: rgba(0,255,200,.3);
+        }
+        #outer:after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        #outer button {
+            display: inline-block;
+            width: 40px;
+            height: 64px;
+            vertical-align: middle;
+            border: rgba(0,255,200,.3);
+            outline: none;
+        }
+        #outer button#prev {
+            background: url("img/arrow.png") no-repeat;
+        }
+        #outer button#next {
+            background: url("img/arrow.png") no-repeat -64px;
+        }
+        #outer img {
+            display: inline-block;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <button id="prev"></button>
+        <img src="img/1.jpg"  alt="pic" />
+        <button id="next"></button>
+    </div>
+    <script type="text/javascript">
+        window.onload = function() {
+            let prev = document.getElementById("prev");
+            let next = document.getElementById("next");
+            let img = document.getElementsByTagName("img")[0];
+
+            let index = 1;
+
+            prev.onclick = function () {
+                let urls = img.src.split("/");
+                index = Number.parseInt(urls[urls.length-1]);
+                index = (index-1)%5;
+                if(index === 0) {
+                    index = 5;
+                }
+                img.src = "img/" + index + ".jpg";
+            };
+
+            next.onclick = function () {
+                let urls = img.src.split("/");
+                index = Number.parseInt(urls[urls.length-1]);
+                index = (index+1)%5;
+                if(index === 0) {
+                    index = 5;
+                }
+                img.src = "img/" + index + ".jpg";
+            };
+        };
+    </script>
+</body>
+</html>
