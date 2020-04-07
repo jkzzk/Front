@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框图片</title>
+    <style type="text/css">
+        /*
+            边框图片
+                border-image-source  默认值为 none 不可继承  引入边框图片
+                border-image-slice 默认为 100% 不可继承 将图片分割为九宫 填充边框与中心区域 默认拉伸填充整个区域
+                    值：
+                        百分比 按照图片的大小 进行4个方向的分割  4个值  上右下左
+                        fill 填充中心区域，作为背景图片 默认不填充
+                border-image-repeat 默认为 stretch 拉伸 不可继承
+                    值：
+                        repeat 重复 但是遇到不法显示的全部图像的情况会分割图片
+                        round 循环重复 不会分割图片
+                border-image-width 默认为1 不可继承  不写  填充整个边框 数值
+                border-image-outset 默认为0 不可继承 设置边框图片超出边框的大小
+
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #test {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border: 30px solid;
+            border-image-source: url("img/hi.png");
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+</html>
