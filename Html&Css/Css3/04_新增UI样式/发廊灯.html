@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发廊灯</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #warp {
+            width: 40px;
+            height: 500px;
+            margin: 200px auto;
+            border: 1px solid;
+            overflow: hidden;
+        }
+
+        #warp > .inner {
+            width: 100%;
+            height: 1000px;
+            /*background-color: deeppink;*/
+            background-image: repeating-linear-gradient(135deg,red 0px,red 10px,
+                white 10px,white 20px,
+                orange 20px,orange 30px,
+                white 30px,white 40px,
+                yellow 40px,yellow 50px,
+                white 50px,white 60px,
+                green 60px,green 70px,
+                white 70px,white 80px,
+                #7FFFD4 80px,#7FFFD4 90px,
+                white 90px,white 100px,
+                blue 100px,blue 110px,
+                white 110px,white 120px,
+                purple 120px,purple 130px,
+                white 130px,white 140px
+            );
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div class="inner"></div>
+    </div>
+    <script type="text/javascript">
+        let inner = document.querySelector("#warp > .inner");
+        let index = 0;
+
+        window.setInterval(function () {
+            index++;
+            if(index == 500) {
+                index = 0;
+            }
+            inner.style.marginTop = -index+"px";
+        },10)
+    </script>
+</body>
+</html>
