@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom查询剩余方法</title>
+    <script type="text/javascript">
+        /*
+        *   document 中有一个属性 body 可以获取页面的body标签元素
+        *           还有一个documentElement  可以获取页面的html标签元素
+        *           属性 all 代表页面中所有的元素
+        *           getElementsByClassName 根据class名获取一组元素  IE9 及以上支持
+        *               参数 ： 类名
+        *           querySelector  根据选择器 来选择元素  IE8 及以上支持
+        *               参数 ： 选择器字符串
+        *               注意 ： 只会返回第一个符合条件的元素
+        *           querySelectorAll 根据选择器 来选择元素  IE8 及以上支持
+        *               参数 ： 选择器字符串
+        *               注意 ： 会返回所有符合条件的元素节点，节点数组，即使只有一个元素，也会返回数组
+        * */
+        window.onload = function() {
+            let  body = document.body;
+
+            console.log(document.all.length);
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
