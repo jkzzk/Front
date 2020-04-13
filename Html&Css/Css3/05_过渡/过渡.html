@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡</title>
+    <style type="text/css">
+        /*
+            不是所有的css属性都可以定义过渡  例如 ：display
+
+            transition-property 过渡属性  默认值为 all   不可继承
+                值：
+                    none
+                    all 所有可变属性
+                    指定属性名 ，可以指定多个属性 以逗号隔开
+           transition-duration 过渡时间  默认值为 0s  不可继承  时间值 s或者ms  不接受负值 应用时必须写单位
+                可以指定多个时间值，对应指定的属性
+                    如果指定属性没有指定时间，那么浏览器会复制前面的时间列表，以对应没有时间对应的属性
+                    如果指定时间没有对应属性，那么浏览器会裁剪掉给时间值
+           transition-timing-function 控制变换的方式与速度 默认 ease 不可继承 可以指定多个对应指定的多个属性值 没有指定默认为none
+                值：
+                    ease 先加速在减速  默认值
+                    linear 匀速
+                    ease-in 加速
+                    ease-out 减速
+                    ease-in-out 先加速在减速
+                    cubic-bezier 贝赛尔曲线
+                    step-start 在时间开始时 一步 过渡
+                    step-end   在时间结束时 一步 过渡
+                    step(步数，start/end)  在步数前过渡或者在步数之后过渡
+          transition-delay  默认值 0s  不可继承  时间值 s或者ms  不接受负值 应用时必须写单位
+                可以指定多个以对应指定属性
+                    如果指定属性没有指定时间延迟，那么浏览器会复制前面的时间延迟列表，以对应没有时间对应的属性
+                    如果指定时间延迟没有对应属性，那么浏览器会裁剪掉给时间值
+          transitionend 过渡完成事件  在过渡完成时，触发该事件
+
+                dom0事件  dom2事件
+        */
+    </style>
+</head>
+<body>
+
+</body>
+</html>

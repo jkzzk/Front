@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选练习</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wraper {
+            width: 500px;
+            height: 500px;
+            background-color: #C3E88D;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wraper">
+        <div style="margin-top: 100px">
+            <span>请选择你的爱好！</span>
+            <input type="checkbox" id="selectAll"> 全选/全不选
+            <input type="checkbox" id="antiElection"> 反选
+            <div style="margin-top: 50px" id="sports">
+                <input type="checkbox" name="hobby" value="basketball"> 篮球
+                <input type="checkbox" name="hobby" value="soccer"> 足球
+                <input type="checkbox" name="hobby" value="baseball"> 棒球
+                <input type="checkbox" name="hobby" value="football"> 橄榄球
+                <input type="checkbox" name="hobby" value="swim"> 游泳
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            let selectAll = document.getElementById("selectAll");
+            let antiElection = document.getElementById("antiElection");
+
+            selectAll.onclick = function () {
+                // alert("selectAll");
+                let hobbys = document.getElementsByName("hobby");
+                for(let i = 0; i < hobbys.length; i++) {
+                    hobbys[i].checked = selectAll.checked;
+                }
+            };
+
+            antiElection.onclick = function () {
+                // alert("antiElection");
+                let hobbys = document.getElementsByName("hobby");
+                for(let i = 0; i < hobbys.length; i++) {
+                    if(hobbys[i].checked) {
+                        hobbys[i].checked = false;
+                    }else {
+                        hobbys[i].checked = true;
+                    }
+                }
+            };
+        };
+    </script>
+</body>
+</html>
