@@ -8,7 +8,23 @@
     </style>
     <script type="text/javascript">
         window.onload = function() {
-
+            /*
+            * clientHeight :    元素可见高度  只读
+            * clientWidth :     元素可见宽度  只读
+            *   直接返回数值，没有加px，返回padding+元素内容区高度(宽度)
+            * offsetWidth :     获取元素边框、内容区、内边距相加的宽度
+            * offsetHeight :    获取元素边框、内容区、内边距相加的高度
+            * offsetParent : 用来获取定位父元素，获取到最近开启定位的祖先元素
+            *       如果没有开启定位的祖先元素，则返回body元素
+            * offsetLeft :  获取相对于其定位元素的left偏移量
+            * offsetTop :   获取相对于其定位元素的top偏移量
+            * scrollHeight : 获取元素可滚动高度
+            * scrollWidth : 获取元素可滚动宽度
+            * scrollLeft : 水平滚动条滚动的距离
+            * scrollTop : 垂直滚动条滚动的距离
+            *      scrollHeight - scrollTop = clientHeight 说明垂直滚动条滚动到底下了
+            *      scrollWidth - scrollLeft = clientWidth 说明水平滚动条滚动到右侧了
+            * */
         };
     </script>
 </head>
