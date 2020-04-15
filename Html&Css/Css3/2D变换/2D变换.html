@@ -6,10 +6,76 @@
     <style type="text/css">
         /*
             transform  2D变换 只对块级元素生效
+                rotate(角度值) 旋转
+                translateX(px值) x方向平移
+                translateY(px值) y方向平移
+                translate(px值，px值) 二维平移，只写一个参数默认为x方向平移
+                skew(角度值)  倾斜
+                skewX(角度值)  沿X轴斜
+                skewY(角度值)  沿Y轴斜
+                scale(倍数)   倍数大于零，缩小用小于1的数 一个值  默认应用与x和y
+                scaleX(倍数)  在X方向上进行缩放
+                scaleY(倍数)  在Y方向上进行缩放
+
+           transform-origin 基点变换  对位移不会造成太大影响
+                值 ：
+                    left    左
+                    top     上
+                    right   右
+                    bottom  下
+                    px值     相对于元素的左上角  也就是  left  top 值 为 0 0
+                    百分比   相对于元素自身宽度高度
+
+                    使用以上值，组合确定一个点 作为新的基点
         */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+        }
+        #warper {
+            width: 100%;
+            height: 50%;
+            margin-top: 100px;
+            box-sizing: border-box;
+            border: 1px solid;
+            position: relative;
+        }
+        #warper #test {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: deeppink;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            font: bold 30px/200px "微软雅黑";
+            text-align: center;
+
+            transition: 1s;
+            transform-origin: ;
+        }
+
+        #warper:hover #test {
+            /*transform: rotate(360deg);*/
+            /*transform: translate(600px);*/
+            /*transform: translateY(-300px);*/
+            /*transform: skew(45deg);*/
+            /*transform: skew(-45deg);*/
+            transform: scale(2);
+        }
     </style>
 </head>
 <body>
-
+    <div id="warper">
+        <div id="test">
+            Loser zzk
+        </div>
+    </div>
 </body>
 </html>
