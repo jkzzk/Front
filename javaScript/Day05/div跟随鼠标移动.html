@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div跟随鼠标移动</title>
+    <style type="text/css">
+        #test{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            let test = document.getElementById("test");
+            /*
+            *   事件对象属性 ：
+            *       pageX   鼠标相对于页面的x坐标
+            *       pageY   鼠标相对于页面的y坐标
+            *   不兼容IE8及以下浏览器
+            * */
+            document.onmousemove = function(event) {
+
+                /*
+                *   兼容谷歌与其他浏览器
+                * */
+                let st = document.body.scrollTop || document.documentElement.scrollTop;
+                let sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                event = event || window.event;
+                test.style.left = event.clientX + sl + "px";
+                test.style.top = event.clientY + st + "px";
+            };
+        };
+    </script>
+</head>
+<body style="width: 2000px;height: 2000px;">
+    <div id="test"></div>
+</body>
+</html>

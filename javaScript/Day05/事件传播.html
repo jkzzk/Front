@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡、委派、绑定、传播</title>
+    <style type="text/css">
+        #test {
+            width: 300px;
+            height: 300px;
+            background-color: #007C70;
+        }
+
+        #test #testSpan {
+            width: 300px;
+            height: 300px;
+            background-color: #C3E88D;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+        *   事件的冒泡(bubble)
+        *       相同的事件向上传导，后代出发事件后，其祖先的相同的时间也会触发
+        *       取消冒泡
+        *           event.cancelBubble = true;
+        *   事件的委派
+        *       通过给多个元素的共同父元素绑定事件，来处理多个元素相同的事件
+        *       event.target  事件对象中属性，表示触发事件的元素
+        *   事件的绑定 （dom2事件）
+        *       addEventListener  绑定事件监听器  可以绑定多个相同的事件  IE8及以下不支持 先绑定先执行
+        *               this 为绑定事件对象
+        *           参数：
+        *               参数1 ： 事件字符串，不要on
+        *               参数2 ： 事件处理方法，回调函数
+        *               参数3 ： 是否捕获阶段触发方法，一般传false
+        *       IE8中 用 attachEvent 绑定事件监听器 可以绑定多个相同的事件  后绑定先执行
+        *               this 为window对象
+        *           参数：
+        *               参数1 ： 事件字符串，要on
+        *               参数2 ： 事件处理方法，回调函数
+        *       自定绑定事件方法：
+        *           1.判断是否有addEventListener
+        *           2.改变回调方式，将attachEvent方法的回调事件处理函数的this改为事件绑定元素
+        *   事件的传播：
+        *       3个阶段
+        *           1.捕获  由外向内，向后代元素传播
+        *           2.目标  事件触发元素，执行
+        *           3.冒泡  由内向外，向祖先元素传播，默认在冒泡阶段执行事件处理
+        * */
+        window.onload = function() {
+            let test = document.getElementById("test");
+            let testSpan = document.getElementById("testSpan");
+            test.onclick = function(event) {
+                alert("我是div test");
+            };
+
+            testSpan.onclick = function () {
+                alert("我是span testSpan");
+                event.cancelBubble = true;
+            };
+
+            document.body.onclick = function () {
+                alert("我是body");
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="test">
+        我是testdiv
+        <span id="testSpan">我是div下span</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style type="text/css">
+        #divArea {
+            width: 500px;
+            height: 200px;
+            border: 1px solid;
+        }
+        #showMessage {
+            margin-top: 30px;
+            width: 500px;
+            height: 50px;
+            border: 1px solid;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            let divArea = document.getElementById("divArea");
+            let showMessage = document.getElementById("showMessage");
+
+            // dom0事件
+            /*
+            *   事件对象：
+            *       事件的响应函数被触发时，浏览器每次都会将事件对象传入响应函数
+            *   clientX 可以获取鼠标x坐标
+            *   clientY 可以获取鼠标y坐标
+            *       在IE8中，浏览器中不会传入事件对象，但是会将事件对象作为全局对象存储在window下
+            *   兼容写法   event = event || window.event;
+            * */
+            divArea.onmousemove = function (event) {
+                // alert("鼠标动了！");
+                // alert(event);
+                event = event || window.event;
+                showMessage.innerHTML = "x = " + event.clientX + "  y = " + event.clientY;
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="divArea"></div>
+    <div id="showMessage"></div>
+</body>
+</html>
