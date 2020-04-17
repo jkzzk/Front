@@ -22,23 +22,62 @@
         * */
         window.onload = function() {
             let test = document.getElementById("test");
-            // 绑定鼠标按下事件
-            bind(test,"mousedown",function(event) {
-                // console.log(event.clientX);
-                bind(document,"mousemove",function(event) {
-                    // console.log(event.clientX);
+
+            //  Dom0 方式
+/*            test.onmousedown = function() {
+                // alert("onmousedown");
+
+                document.onmousemove = function(event) {
                     let st = document.body.scrollTop || document.documentElement.scrollTop;
                     let sl = document.body.scrollLeft || document.documentElement.scrollLeft;
-
                     event = event || window.event;
                     test.style.left = event.clientX + sl + "px";
                     test.style.top = event.clientY + st + "px";
-                });
+                };
 
-                bind(document,"mouseup",function(event) {
-                    unbind(document,"mousemove",function(){});
-                    unbind(test,"mousedown",function(){});
-                });
+                document.onmouseup = function() {
+                    // alert("onmouseup");
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+            };*/
+
+            //  Dom2 方式
+            /*
+            *   removeEventListener 不能移除匿名方法
+            * */
+
+            let ol,ot;
+
+            function moveWith(event) {
+                let st = document.body.scrollTop || document.documentElement.scrollTop;
+                let sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                event = event || window.event;
+                test.style.left = event.clientX  - ol + "px";
+                test.style.top = event.clientY - ot + "px";
+            }
+
+            function mouseup() {
+                unbind(document,"mousemove",moveWith);
+                unbind(document,"mousemove",mouseup);
+            }
+
+            bind(test,"mousedown",function(event) {
+
+                ol = event.clientX - test.offsetLeft;
+                ot = event.clientY - test.offsetTop;
+
+                bind(document,"mousemove",moveWith);
+                bind(document,"mouseup",mouseup);
+
+                /*
+                *   取消浏览器默认事件，但是对IE8不起作用
+                *       setCapture()   IE8 及以下 将所有的鼠标点击事件全部转移到绑定元素上，包括操作系统的点击事件
+                *               火狐、谷歌会报错
+                *       replaceCapture()  取消捕获
+                * */
+                return false;
             });
         }
     </script>
