@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        #warp {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px solid black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px;
+        }
+        #warp > ul > li {
+            width: 2px;
+            height: 10px;
+            background-color: black;
+            position: absolute;
+            left: 149px;
+            transform-origin: center 150px;
+        }
+
+        #warp > ul > li:nth-child(5n) {
+            height: 15px;
+        }
+
+        #warp .hour {
+            position: absolute;
+            left: 147px;
+            top: 110px;
+            width: 6px;
+            height: 40px;
+            background-color: black;
+            transform-origin: center bottom;
+        }
+
+        #warp .min {
+            position: absolute;
+            left: 148px;
+            top: 90px;
+            width: 4px;
+            height: 60px;
+            background-color: grey;
+            transform-origin: center bottom;
+        }
+
+        #warp .sec {
+            position: absolute;
+            left: 149px;
+            top: 50px;
+            width: 2px;
+            height: 100px;
+            background-color: red;
+            transform-origin: center bottom;
+        }
+
+        #warp .icon {
+            position: absolute;
+            left: 145px;
+            top: 145px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: deeppink;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            let ulNode = document.querySelector("#warp > ul");
+            let styleNode = document.createElement("style");
+            let hourEle = document.querySelector("#warp .hour");
+            let minEle = document.querySelector("#warp .min");
+            let secEle = document.querySelector("#warp .sec");
+            let liHtml = "";
+            let cssHtml = "";
+            for(let i = 0; i<60; i++) {
+                liHtml += "<li></li>";
+                cssHtml += "#warp > ul > li:nth-child("+i+"){ transform: rotate("+(i*6)+"deg); }"
+            }
+            ulNode.innerHTML = liHtml;
+            styleNode.innerHTML += cssHtml;
+            document.head.appendChild(styleNode);
+
+            move();
+            setInterval(move,1000);
+
+            function move(){
+                let now = new Date();
+                let sec = now.getSeconds();
+                let min = now.getMinutes() + sec/60;
+                let hour = now.getHours() + min/60;
+
+                hourEle.style.transform = "rotate("+ (hour*30) +"deg)";
+                minEle.style.transform = "rotate("+ (min*6) +"deg)";
+                secEle.style.transform = "rotate("+ (sec*6) +"deg)";
+
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="warp">
+        <ul></ul>
+        <div class="hour"></div>
+        <div class="min"></div>
+        <div class="sec"></div>
+        <div class="icon"></div>
+    </div>
+</body>
+</html>

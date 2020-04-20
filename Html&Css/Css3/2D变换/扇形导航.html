@@ -58,7 +58,7 @@
                     home.style.transform = "rotate(-360deg)";
                     for(let i = 0; i < imgs.length; i++) {
                         imgs[i].style.transition  = "1.5s " + (i*0.1) + "s";
-                        imgs[i].style.transform = "rotate(-720deg)";
+                        imgs[i].style.transform = "rotate(-720deg) scale(1)";
                         imgs[i].style.left = -(getPoint(200,i*22.5).left) + "px";
                         imgs[i].style.top = -(getPoint(200,i*22.5).top)  + "px";
                     }
@@ -66,7 +66,7 @@
                     home.style.transform = "rotate(360deg)";
                     for(let i = 0; i < imgs.length; i++) {
                         imgs[i].style.transition  = "1.5s " + ((imgs.length-1-i)*0.1) + "s";
-                        imgs[i].style.transform = "rotate(720deg)";
+                        imgs[i].style.transform = "rotate(720deg) scale(1)";
                         imgs[i].style.left = 0 + "px";
                         imgs[i].style.top = 0  + "px";
                     }
@@ -74,10 +74,23 @@
 
                 flag = !flag;
             };
+            
+            function fn() {
 
+                this.style.transform = "rotate(-720deg) scale(1)";
+                this.style.opacity = 1;
+
+                // 解绑过度完成事件
+                this.removeEventListener("transitionend",fn);
+            }
+            
             for(let i = 0; i < imgs.length; i++) {
                 imgs[i].onclick = function () {
-                    imgs[i].style.transform = "scale(2)";
+                    this.style.transition = "1s ";
+                    this.style.transform = "rotate(-720deg) scale(2)";
+                    this.style.opacity = 0.1;
+
+                    this.addEventListener("transitionend",fn);
                 };
             }
 
