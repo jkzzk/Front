@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘移动</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #test {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script  type="text/javascript">
+        window.onload = function() {
+            let test = document.getElementById("test");
+
+            let top = 0;
+            let left = 0;
+
+            document.onkeydown = function (event) {
+                switch(event.key) {
+                    case 'ArrowUp': top-=100;  break;
+                    case 'ArrowLeft': left-=100;  break;
+                    case 'ArrowDown': top+=100;  break;
+                    case 'ArrowRight': left+=100;  break;
+                    default : alert("其他键无效");
+                }
+                test.style.top = top + "px";
+                test.style.left = left + "px";
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚轮事件</title>
+    <script type="text/javascript" src="js/eventBind.js"></script>
+    <style type="text/css">
+        /*
+        */
+        #test {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+        *   火狐不支持onmousewhell事件,可以用DOMMouseScroll，只支持 addEventListener
+        *
+        *   event.wheelDelta  获取滚轮的滚动方向  正值：向上  负值：向下  火狐中不支持
+        *       火狐中用 event.detail  正值：向下  负值：向上
+        *
+        *        addEventListener 取消浏览器默认事件，使用event.preventDefault()
+        * */
+        window.onload = function() {
+            let test = document.getElementById("test");
+
+            function mousewheel(event) {
+                // alert(event.wheelDelta);
+                if(event.wheelDelta > 0 || event.detail < 0) {
+                    test.style.height = (test.clientHeight - 10) + "px";
+                }else {
+                    test.style.height = (test.clientHeight + 10) + "px";
+                }
+
+                event.preventDefault && event.preventDefault();
+            }
+
+            bind(test,"mousewheel",mousewheel);
+
+            bind(test,"DOMMouseScroll",mousewheel);
+        };
+    </script>
+</head>
+<body style="height: 100000px;">
+    <div id="test"></div>
+</body>
+</html>

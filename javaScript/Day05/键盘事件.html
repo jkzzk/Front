@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script type="text/javascript" src="js/eventBind.js"></script>
+    <style type="text/css">
+        /*
+        */
+        #test {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+        *   onkeyup 与 onkeydown
+        *
+        *   一般会绑定在可以获取焦点的元素或者document
+        *   连续键盘按下会一直触发键盘按下事件，但是第一下触发和第二次触发会有一次停顿
+        *   event属性
+        *       keyCode  返回按下键的对应unicode代码
+        *       ctrlKey  ctrl 是否被按下 按下返回true,为按下返回false
+        *       altKey  alt 是否被按下 按下返回true,为按下返回false
+        *       shiftKey  shift 是否被按下 按下返回true,为按下返回false
+        * */
+        window.onload = function() {
+            let test = document.getElementById("test");
+
+            document.onkeydown = function(event) {
+
+            };
+
+            document.onkeyup = function(event) {
+
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="text" id="test">
+</body>
+</html>
