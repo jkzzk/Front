@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        /*
+        *   定时调用
+        *       setInterval()  全局方法
+        *           1.参数1 ： 回调方法,每一个时间间隔后回调该方法
+        *           2.参数2 ： 时间间隔，单位毫秒
+        *       返回值 ： 返回Number类型的数据,用来索引定时器
+        *       clearInterval()  关闭定时器
+        * */
+        window.onload = function() {
+            let test = document.getElementById("test");
+
+            let count = 0;
+            let timer = setInterval(function () {
+                count++;
+                test.innerHTML = "" + count;
+                if(count == 5) {
+                    clearInterval(timer);
+                }
+            },1000);
+        }
+    </script>
+</head>
+<body>
+     <span id="test">1</span>
+</body>
+</html>

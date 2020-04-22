@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I_Love_U</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        #warp {
+            width: 1083px;
+            height: 833px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            let img = document.querySelector("#warp img");
+
+            let count = 1;
+            let timer = setInterval(function() {
+                img.src = "img/Together_Forever/(" + count + ").jpg";
+                count++;
+                if(count > 397) {
+                    clearInterval(timer);
+                }
+            },200)
+        };
+    </script>
+</head>
+<body>
+    <div id="warp">
+        <img src="img/Together_Forever/(1).jpg" alt="I Love U">
+    </div>
+</body>
+</html>
