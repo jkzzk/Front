@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百叶窗</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        html,body {
+            height: 100%;
+            background-color: black;
+        }
+        #warp {
+            position: absolute;+
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 800px;
+            height: 360px;
+            margin: auto;
+            /*border: 1px solid;*/
+            box-shadow: 2px 10px rgba(255,255,255,.1);
+            perspective: 1500px;
+            transform-style: preserve-3D;
+        }
+        #warp li{
+            width: 100%;
+            height: 100%;
+            /*border: 1px solid red;*/
+        }
+        #warp li:nth-child(1) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+        #warp li:nth-child(2) {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #warp li:nth-child(3) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+        }
+        #warp li:nth-child(4) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: center center -180px;
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <ul id="warp">
+        <li><img src="img/1.png" alt=""></li>
+        <li><img src="img/2.png" alt=""></li>
+        <li><img src="img/3.jpg" alt="">/li>
+        <li><img src="img/4.jpg" alt=""></li>
+    </ul>
+</body>
+</html>
