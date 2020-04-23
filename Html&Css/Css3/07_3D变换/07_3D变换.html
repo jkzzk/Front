@@ -4,13 +4,89 @@
     <meta charset="UTF-8">
     <title>3D变换</title>
     <style type="text/css">
+        /*
+            3D变换
+                景深 ： 肉眼距离显示器的距离，景深越大，距离越远
+                    perspective 像素值 景深距离  不可继承  作用于后代元素
+                    transform: perspective() 作用于元素本身  只能放在首位  一般不会用，会引发过度的bug
+                    perspective-origin 控制景深基点，也就是肉眼的位置，视角  默认为50% 50%，相对于border-box
+                    注意：
+                        景深的叠加，祖先元素的景深会叠加到后代上，尽量避免景深叠加
+                灭点：
+                    所有光线聚焦的点
+                        景深越大，灭点越远，元素变形更小，反之成立
+                舞台：
+                    transform-style : 营造有层级的3D舞台  不可继承属性 作用与子元素，注意子元素不是后代
+                        值：
+                            flat 默认值，以2D层面渲染
+                            preserve-3d 以3D层面渲染
+                旋转
+                    rotateZ(角度)  以Z轴为旋转中心旋转
+                    rotateY(角度)  以Y轴为旋转中心旋转
+                    rotateX(角度)  以X轴为旋转中心旋转
+                    rotate3D(x,y,z,角度)  以基点到指定点的连线为轴旋转
+               平移
+                    translateX(像素值/平移距离)
+                    translateY(像素值/平移距离)
+                    translateZ(像素值/平移距离)
+                    translate3D(x,y,z)
+                    注意：
+                        Z轴不能写百分比，应为元素没有厚度
+               缩放
+                    scaleZ(倍数)  在Z轴上放大厚度，单独使用没有效果
+                    scaleY(倍数)  在Y轴上放大厚度
+                    scaleX(倍数)  在X轴上放大厚度
+                    scale3D(x,y,z)
+        */
 
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #warp {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            perspective: 100px;
+            transform-style: preserve-3d;
+        }
+
+        #warp .test {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid;
+            background-color: deeppink;
+            font: 50px "微软雅黑";
+            text-align: center;
+            line-height: 200px;
+            transition: 2s;
+        }
+
+        #warp:hover .test{
+            transform: rotateX(360deg);
+        }
     </style>
     <script type="text/javascript">
 
     </script>
 </head>
 <body>
-
+    <div id="warp">
+        <div class="test">zzk</div>
+    </div>
 </body>
 </html>
