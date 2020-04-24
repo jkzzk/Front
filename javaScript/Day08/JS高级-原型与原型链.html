@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS高级-原型与原型链</title>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        /*
+        * 函数的property属性
+        *    - 每个函数都有一个property属性，这个属性默认指向了一个Object空对象,没有属性
+        *           但是Object函数例外，他的原型不是Object的实例,其指向的实例隐式原型没有原型其值为null，是原型链的尽头
+        *    - 原型对象中有一个constructor指向该函数对象
+        *    - 函数作为构造函数创建的实例可以访问原型对象的属性与方法
+        *    - 每个对象都有一个属性__proto__,称为隐式原型
+        *    - 实例中的属性__proto__与其构造方法的property属性指向同一个对象
+        *    - 在ES6之前，不能直接操作__proto__属性
+        * 原型链（隐式原型链）
+        *    - 对象访问属性时，对象在自身寻找，找不到就去原型中去找，如果找不到就到上级原型中寻找，找到返回，找不到返回undefined
+        *    - 对象设置属性时，不会查找原型对象，只会设置在本实例对象中
+        *    - 方法一般定义在原型中，属性一般会设置在实例对象中
+        * */
+        function fun() {}
+        console.log(fun.prototype);
+
+        console.log(Object.prototype instanceof Object);  //false
+
+        console.log(Object.prototype.__proto__);  //null
+    </script>
+</head>
+<body>
+
+</body>
+</html>
