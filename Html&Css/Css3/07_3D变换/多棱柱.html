@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多棱柱</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            overflow: hidden;
+        }
+        #warp {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            border: 1px solid;
+
+            perspective: 200px;
+        }
+
+        #warp > .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            transition: 10s transform linear;
+
+            transform-style: preserve-3D;
+        }
+
+        #warp > .box > div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #7FFFD4;
+            text-align: center;
+            font: 50px/200px "微软雅黑";
+            backface-visibility: hidden;
+        }
+
+        #warp:hover > .box {
+            transform: rotateY(360deg);
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            createLZ(100);
+        };
+
+        function createLZ(n) {
+            let degOut = 360/n;
+            let degIn = 180 - 360/n;
+            let boxNode = document.querySelector("#warp > .box");
+            let styleNode = document.createElement("style");
+            let content = "";
+            let cssText = "";
+            for(let i = 0; i < n; i++) {
+                content += "<div>"+ (i+1) +"</div>";
+                cssText += "#warp > .box > div:nth-child("+(i+1)+"){transform:rotateY("+(i*degOut)+"deg)}"
+            }
+            boxNode.innerHTML = content;
+
+            let surface = document.querySelector("#warp > .box > div");
+            let length = surface.offsetWidth;
+            cssText += "#warp > .box{transform-origin: center center -"+ ((length/2)*Math.tan((degIn/2)*Math.PI/180)) +"px;}";
+            cssText += "#warp > .box > div{transform-origin: center center -"+ ((length/2)*Math.tan((degIn/2)*Math.PI/180)) +"px;}";
+            styleNode.innerHTML = cssText;
+            document.head.appendChild(styleNode);
+        }
+    </script>
+</head>
+<body>
+    <div id="warp">
+        <div class="box">
+        </div>
+    </div>
+</body>
+</html>

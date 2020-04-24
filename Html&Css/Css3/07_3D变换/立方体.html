@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立方体</title>
+    <style type="text/css">
+        /*
+            backface-visibility : 隐藏不可见面 默认值  visible  不可继承
+                值：
+                    visible  不隐藏，默认值
+                    hidden  隐藏
+        */
+        #warp {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            border: 1px solid;
+
+            perspective: 200px;
+        }
+
+        #warp > .box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            transition: 3s;
+            transform-origin: center center -100px;
+
+            transform-style: preserve-3D;
+        }
+
+        #warp > .box > div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            /*background-color: #7FFFD4;*/
+            text-align: center;
+            font: 50px/200px "微软雅黑";
+            backface-visibility: hidden;
+        }
+
+        #warp > .box > div:nth-child(5){
+            top: -200px;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+        }
+        #warp > .box > div:nth-child(6){
+            bottom: -200px;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+        }
+        #warp > .box > div:nth-child(3){
+            left: -200px;
+            transform-origin: right;
+            transform: rotateY(-90deg);
+        }
+        #warp > .box > div:nth-child(4){
+            right: -200px;
+            transform-origin: left;
+            transform: rotateY(90deg);
+        }
+        #warp > .box > div:nth-child(2){
+            transform: translateZ(-200px) rotateX(180deg);
+        }
+        #warp > .box > div:nth-child(1){
+            z-index: 1;
+        }
+
+        #warp:hover > .box {
+            transform: rotateX(360deg);
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+
+        };
+    </script>
+</head>
+<body>
+    <div id="warp">
+        <div class="box">
+            <div>前</div>
+            <div>后</div>
+            <div>左</div>
+            <div>右</div>
+            <div>上</div>
+            <div>下</div>
+        </div>
+    </div>
+</body>
+</html>
