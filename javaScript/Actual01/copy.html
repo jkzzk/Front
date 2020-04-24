@@ -24,50 +24,71 @@
             width: 800px;
             height: 360px;
             margin: auto;
-            /*border: 1px solid;*/
-            box-shadow: 2px 10px rgba(255,255,255,.1);
+            box-shadow:0 0 10px white;
             perspective: 1500px;
+        }
+        #warp .box {
+            float: left;
+            width: 40px;
+            height: 100%;
+            transition: 3s ease-out;
+            transform-origin: center center -180px;
             transform-style: preserve-3D;
         }
-        #warp li{
-            width: 100%;
+        #warp > .box > li{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
             height: 100%;
-            /*border: 1px solid red;*/
+            transform-origin: center center -180px;
+            backface-visibility: hidden;
         }
-        #warp li:nth-child(1) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform-origin: top;
-            transform: rotateX(-90deg);
+        #warp > .box > li:nth-child(1) {
+            background-image: url("img/2.png");
+            transform: rotateX(0deg);
         }
-        #warp li:nth-child(2) {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        #warp li:nth-child(3) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform-origin: bottom;
+        #warp > .box > li:nth-child(2) {
+            background-image: url("img/1.png");
             transform: rotateX(90deg);
         }
-        #warp li:nth-child(4) {
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform-origin: center center -180px;
+        #warp > .box > li:nth-child(3) {
+            background-image: url("img/3.jpg");
             transform: rotateX(180deg);
         }
+        #warp > .box > li:nth-child(4) {
+            background-image: url("img/4.jpg");
+            transform: rotateX(270deg);
+        }
+
+        #warp:hover .box{
+            transform: rotateX(-360deg);
+        }
     </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            shutter();
+        };
+        function shutter() {
+            let warpNode = document.querySelector("#warp");
+            let styleNode = document.createElement("style");
+            let cssText = "";
+            for (let i = 0; i < 20; i++) {
+                let ulNode = document.createElement("ul");
+                ulNode.className = "box";
+                ulNode.innerHTML = "<li></li><li></li><li></li><li></li>";
+                cssText += "#warp .box:nth-child("+ (i+1) +") li{background-position : -"+ (i*40) +"px 0}";
+                cssText += "#warp .box:nth-child("+ (i+1) +") {transition-delay:"+ i*50 +"ms;}";
+                warpNode.appendChild(ulNode);
+            }
+            styleNode.innerHTML = cssText;
+            document.head.appendChild(styleNode);
+        }
+    </script>
 </head>
 <body>
-    <ul id="warp">
-        <li><img src="img/1.png" alt=""></li>
-        <li><img src="img/2.png" alt=""></li>
-        <li><img src="img/3.jpg" alt="">/li>
-        <li><img src="img/4.jpg" alt=""></li>
-    </ul>
+    <div id="warp">
+
+    </div>
 </body>
 </html>
