@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style type="text/css">
+        /*
+           animation-name : 指定关键帧的名称
+           animation-duration : 指定动画周期长度  单位为s或者ms 不接受负值  0代表没有动画
+           animation-timing-function : 同transition-timing-function
+           animation-delay : 延迟时间 单位为s或者ms 不接受负值  0代表没有延迟
+           animation-iteration-count : 动画执行次数，重复所有关键帧，控制单个关键帧的执行形势 ， 不影响动画外的属性，比如 延迟时间
+                值 ： 次数
+           animation-direction : 动画的方向 会影响关键帧与animation-timing-function的执行方向
+                值 ：
+                    normal  正常 默认值 会按照关键帧与animation-timing-function的规则执行
+                    reverse 动画反向播放
+                    alternate  奇数次反向播放，偶数次正向播放
+                    alternate-reverse 奇数次正向播放，偶数次反向播放
+           animation-fill-mode : 控制元素在动画外的状态
+                值 ：
+                    backwards 元素在动画外的状态 与 关键帧的 初始位置相同
+                    forwards  元素在动画外的状态 与 关键帧的 结束位置相同
+                    both    元素的状态 与 关键帧 相同
+
+           animation-play-state : 控制动画的运行停止与开始
+                值 ：
+                    running 运行  默认值
+                    paused 暂停
+
+           @keyframes 动画名称 {  // 定义关键帧
+                from{}  // 关键帧开始的样式
+                to{}    // 关键帧结束的样式
+                以定义多个百分比，动画执行时间的百分比
+                from ： 0%
+                to ： 100%
+           }
+        */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #warp {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+            border: 1px solid;
+
+            perspective: 500px;
+            transform-style: preserve-3D;
+        }
+        #warp .test {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border-radius: 50%;
+
+            background-color: deeppink;
+            text-align: center;
+            font: 50px/200px "微软雅黑";
+
+            /*transition: 3s;*/
+            animation-name: move;
+            animation-duration: 3s;
+            animation-timing-function: ease;
+        }
+
+        /*定义关键帧*/
+        @keyframes move {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        /*#warp:hover .test {*/
+        /*    transform: rotateY(360deg);*/
+        /*}*/
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+
+        };
+    </script>
+</head>
+<body>
+    <div id="warp">
+        <div class="test">张泽昆</div>
+    </div>
+</body>
+</html>
