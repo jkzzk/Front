@@ -18,8 +18,88 @@
 
             老版本：
                 1.容器
-                    - 容器的布局方向：
+                    - 容器的布局方向 :
+                        -webkit-box-orient :  控制主轴是X轴还是Y轴
+                            值：
+                                vertical  主轴是Y轴，测轴X
+                                horizontal  主轴是X轴，测轴Y
+                    - 主轴的方向 :
+                        -webkit-box-direction : 控制主轴的方向
+                            值：
+                                normal ： 正常
+                                reverse : 倒序
+                    - 主轴方向上的赋予空间管理
+                        -webkit-box-pack :
+                            值：
+                                start 富裕空间在右边
+                                end 默认值  富裕空间在左边
+                                center 富裕空间在两边
+                                justify 富裕空间在项目之间
+                    - 侧轴方向上的赋予空间管理
+                        -webkit-box-align
+                            值：
+                                start 富裕空间在下边
+                                end 富裕空间在上边
+                                center 富裕空间在两边
+
                 2.项目
+                    - 弹性空间管理
+                        将富裕空间按比例分配给项目
+                        -webkit-box-flex  弹性因子，项目占据的比例，值为整数
+           新版本：
+                1.容器
+                    - 容器的布局方向：
+                        flex-direction :  控制主轴是X轴还是Y轴,控制主轴的正方向
+                            值：
+                                column  主轴是Y轴，测轴X
+                                column-reverse 主轴是Y轴，测轴X,且主轴反向
+                                row  主轴是X轴，测轴Y
+                                row-reverse 主轴是X轴，测轴Y,且主轴反向
+                   - 主轴方向上的赋予空间管理
+                       justify-content :
+                            值：
+                                flex-start 富裕空间在主轴的正方向上
+                                flex-end 富裕空间在主轴的反方向上
+                                center 富裕空间在主轴两边
+                                space-between 富裕空间在项目之间
+                                space-around 富裕空间在项目两边
+                    - 侧轴方向上的赋予空间管理
+                        align-items : 单行时看此属性
+                           值：
+                                flex-start 富裕空间在侧轴的正方向上
+                                flex-end 富裕空间在侧轴的反方向上
+                                center 富裕空间在侧轴两边
+                                baseline 基线对齐
+                                stretch 等高布局
+                2.项目
+                    - 弹性空间管理
+                        将富裕空间按比例分配给项目
+                        flex-grow  弹性因子，项目占据的比例，值为整数
+                3.新版本新增
+                    -容器
+                        flex-wrap 控制侧轴方向
+                            值：
+                                nowrap  没有换行，压缩  默认值
+                                wrap    换行，不压缩
+                                wrap-reverse
+                        align-content 控制多行多列富裕空间，会把所有富裕空间看成整体
+                            值：
+                                flex-start 富裕空间在侧轴的正方向上
+                                flex-end 富裕空间在侧轴的反方向上
+                                center 富裕空间在侧轴两边
+                                baseline 基线对齐
+                                stretch 等高布局
+                        flex-flow是flex-direction与flex-wrap的简写
+                    -项目
+                        order : 控制项目的排序
+                            值越大排在越后
+                        align-self ： 项目管理自己的富裕空间
+                            auto 默认 应用容器上的 align-items 属性 没有容器值为：stretch
+                            flex-start 富裕空间在侧轴的正方向上
+                            flex-end 富裕空间在侧轴的反方向上
+                            center 富裕空间在侧轴两边
+                            baseline 基线对齐
+                            stretch 等高布局
 
         */
         #warp {
@@ -38,7 +118,9 @@
             /*display: -webkit-box;*/
             /*新版本flex布局会将元素盒子挤压来适应父元素宽度*/
             /*display: flex;*/
-            -webkit-box-orient: vertical;
+            -webkit-box-orient: horizontal;
+            flex-direction: row-reverse;
+            -webkit-box-direction: reverse;
         }
         #warp .item {
             width: 50px;
