@@ -38,7 +38,28 @@
             - 如果要同时打开其他面板与Console，直接按Esc即可
         3) 操作
             - 清空控制台数据 Ctrl + L
-   
+        4) 过滤
+            Verbose : 长消息
+            Info : console.log()  普通信息
+            Warnings : console.warn() 警告信息  将会有黄色的背景颜色
+            Errors : console.error() 错误信息  将会有红色的背景颜色
+            Filter box ： 过滤文本输入框
+                1.可以是普通查找功能
+                2.也可以写正则表达式，js正则
+            Sidebar 左侧工具栏
+                1.message  所有message以及其URL，来源
+                2.user message 所有用户信息，过滤掉浏览器的信息
+                3.errors    所有错误信息以及其URL，来源
+                4.warnings  所有警告信息以及其URL，来源
+                5.info 所有普通信息以及其URL，来源
+                6.verbose 所有长消息以及其URL，来源
+        5) Console中可以运行js
+            - 
+        6) Console控制台设置
+            - Hide Network 隐藏因网络问题而输出的日志
+            - Preserve Log 刷新页面是否保存上一次的日志信息
+            - Selected Context Only 过滤其他嵌入式页面页面的日志信息
+            - 
     3.Source源码界面，里面呈现的代码都是原文件的代码，主要的用途是用来对代码进行断点调试和代码测试  
     4.netWork 主要是查看网络环境包括报头和返回数据等参数  
     5.Performance 主要是用来查看JS计算性能相关的，一般如果是单纯的页面不包含canvas，大数据渲染等等的，一般是不需要使用到的  
