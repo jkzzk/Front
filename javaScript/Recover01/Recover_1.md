@@ -2,20 +2,20 @@
 ##&ensp;&ensp;&ensp;&ensp;第一节 Chrome 调试工具
 ###&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.1 调试面板
 ![alt 调试面板上方面板选项](img/1.png)  
-  
+
     1.Elements主要用来查看最终渲染情况，CSS样式的修改和绑定事件的定位
-      
+
 ![alt Elements面板选项](img/2.png)     
     
         1).分为两个部分
             - 左面部分为网页最终渲染后的文档结构，包括css与js渲染
             - 右面部分
                 * Styles 所选元素的当前页面渲染后的样式，包括样式结构和类名，可以进行手动输入、调节样式
-                
+
 ![alt Computed面板选项](img/3.png)  
                 
                 * Computed 可以对选中元素的样式进行总览，可以直观的展现盒模型模型  
-                
+
 ![alt Event Listeners面板选项](img/4.png)  
                  
                 * Event Listeners 可以获取选中元素的绑定事件
@@ -124,9 +124,9 @@
                     unmonitorEvents(object[, events]) 停止监听对象上的事件
                     table(data[, columns]) 是指定的对象（对象数组）以表格的形势输出
                 - 使用window.onerror(msg,url,line) 处理运行时异常
-                  
+
 ![alt Console调试台](img/6.png)
-  
+
         6) Console控制台设置
             - Hide Network 隐藏因网络问题而输出的日志
             - Preserve Log 刷新页面是否保存上一次的日志信息
@@ -136,7 +136,72 @@
             - Eager Evaluation 提前预演js执行结果
             - Autocomplete From History 显示执行历史记录   
                      
-    3.Source源码界面，里面呈现的代码都是原文件的代码，主要的用途是用来对代码进行断点调试和代码测试  
-    4.netWork 主要是查看网络环境包括报头和返回数据等参数  
+    3.Source源码界面，里面呈现的代码都是原文件的代码，主要的用途是用来对代码进行断点调试和代码测试
+        1) Sources 面板界面的 3 个部分
+
+![alt Console调试台](img/7.png)        
+        
+            1.File Navigator 窗格。 此处列出页面请求的每个文件。
+            2.Code Editor 窗格。 在 File Navigator 窗格中选择文件后，此处会显示该文件的内容。
+            3.JavaScript Debugging 窗格。 检查页面 JavaScript 的各种工具。 主要用来调试脚本执行
+                如果 DevTools 窗口布局较宽，此窗格会显示在 Code Editor 窗格右侧。
+
+![alt Console调试台](img/8.png) 
+
+        2） 调试 JavaScript 代码
+            1. 跳到下一个断点
+            2. 第二个为跳过方法或函数，不进入函数或者方法内部
+            3. 下一步，遇到子函数跳到子函数中执行
+            4. 在子函数内部，跳出，在子函数外部，进入子函数
+            5. 直接跳出子函数 
+            6. 取消所有断点
+            7. 暂停调试，可以设置遇到异常暂停调试   
+        
+        3） 调试面板信息
+            1.watch
+                可以添加监控的变量
+            2.Call Stack
+                方法调用栈
+            3.Scope
+                当前三种作用域中的变量，方法，函数
+                    Local  方法调用上下文，局部
+                    Closure 闭包
+                    Global 全局调用上下文，全局
+            4.Breakpoints
+                显示当前脚本中的所有断点
+            5.DOM Breakpoints
+                DOM 断点
+            6.XHR Breakpoints
+                请求断点
+            7.Event Listener Breakpoints
+                事件断点
+            8.Global Listeners
+                绑定在全局作用域window上的事件
+                
+        4） 断点
+            1.在Code Editor 窗格中，显示脚本页面时，点击左面行号，就可以方便生成断点
+            2.右键该断点，菜单中可以删除、编辑、禁用该断点
+            3.最后一个选项为黑盒脚本，作用为不跳入第三方脚本库，只在我们自己的脚本中进行调试
+
+    4.netWork 主要是查看网络环境包括报头和返回数据等参数
+        
+        1) netWork 面板界面的 3 个部分 
+
+![alt Console调试台](img/9.png)
+
+        1.控制面板上有很多的功能按钮
+        2.请求表格(Requests Table)，表格内容按照请求的顺序排序，点击一个请求的 "Name" 列可以查看这个请求的具体信息 
+        3.概览(Summary)，主要显示这个网页有多少请求，请求的数据有多大，一共花费了多少时间       
+        
+        控制面板：
+            1.开启停止网络请求获取
+            2.清除所有网路请求
+            3.开启筛选请求条件
+            4.查找请求
+            5.Preserve log 每次刷新页面，是否保留上次，选中保留
+            6.Disable cache 是否禁用缓存，每次刷新页面都重新加载缓存数据
+            7.选择网页模式，在线，离线
+        
+
     5.Performance 主要是用来查看JS计算性能相关的，一般如果是单纯的页面不包含canvas，大数据渲染等等的，一般是不需要使用到的  
     6.Memory 记录内存的情况  
