@@ -1,0 +1,22 @@
+{
+  "name": "test_service",
+  "version": "1.0.0",
+  "description": "a test mpm init",
+  "main": "Service.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "no"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "zzk",
+  "license": "ISC"
+}
