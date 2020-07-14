@@ -1,3 +1,4 @@
+// 遍历数组
 var arr = [1,2,3,4,5];
 
 for(var i = 0; i < arr.length; i++) {
@@ -38,12 +39,33 @@ let arr_form = Array.from({length :5},function () {return 1;});
 console.log("arr_from",arr_form);
 
 // ES6 创建数组问题
-// Array.of
+// Array.of  无限个元素
+let arr_of = Array.of(1,3,4,5,6);
+console.log("arr_of",arr_of);
+// Array.fill(元素值，开始索引，结束索引,不包括)
+let arr_fill = new Array(5).fill(1);
+console.log("arr_fill",arr_fill);
 
-// Array.fill
+let  tmp_fill_arr = [1,3,4,5,6];
+tmp_fill_arr.fill(1,2,3);
+console.log("tmp_fill_arr",tmp_fill_arr);
 
-
-
+// 查找数组
+// ES5 中 查找方法
+let search_arr = [1,3,34,5456,7,2,4,3];
+let filter = search_arr.filter(function (item) {
+    return item % 2 === 0;
+});
+console.log("filter",filter);
+// ES6
+let find = search_arr.find(function (item) {
+    return item === 3;  // 返回值
+});
+console.log("find",find);
+let findIndex = search_arr.findIndex(function (item) {
+    return item === 3;  // 返回值
+});
+console.log("findIndex",findIndex);
 
 /*
 *   0. JAVA 基础语法包括新特性
