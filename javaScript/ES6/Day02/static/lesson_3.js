@@ -83,6 +83,7 @@ let arr_map = Array.from(map);
 console.log("arr_map",arr_map);
 
 let newMap = new Map(arr_map);
+// newMap = new Map([...map]);
 console.log("newMap",newMap);
 console.log("newMap",newMap == map);  // 深拷贝
 
@@ -115,5 +116,60 @@ while(true) {
     }
     console.log("{key : " + next.value[0] + " , value : " + next.value[1] + "}");
 }
+
+/*
+* Set集合
+*   存储单值，不能重复
+*   注意：
+*       一些恒等值，不能重复，但是NaN这种不恒等的特殊值，在Set集合中只能存储一个
+* */
+
+let set = new Set();
+// 存储原始数据类型
+set.add("abc");
+console.log("set",set);
+// set.add(Symbol());
+console.log("set",set);
+// 存储对象
+set.add({});
+set.add({});
+console.log("set",set);
+// 存储函数
+let func_set = function() {}
+set.add(func_set);
+set.add(function() {});
+console.log("set",set);
+
+/*
+*  Set与数组转换
+* */
+let set_arr = Array.from(set);
+console.log("set_arr",set_arr);
+let newSet = new Set([...set_arr]);
+console.log("newSet",newSet);
+console.log("newSet == set",newSet == set);  // 拷贝
+// 用字符串构造
+let strSet = new Set("hello");
+console.log("strSet",strSet);
+// 遍历
+let it_set = set[Symbol.iterator]();
+while(true) {
+    let next = it_set.next();
+    if(next.done) {
+        break;
+    }
+    console.log("value : " + next.value);
+}
+// set操作 并集
+let megre_set = new Set([...set,...newSet]);
+console.log("megre_set",megre_set);
+megre_set = new Set([...set,...strSet]);
+console.log("megre_set",megre_set);
+// set操作 交集
+let intersect = new Set([...set].filter(item => newSet.has(item)));
+console.log("intersect",intersect);
+// set操作 差集
+let diffence = new Set([...set].filter(item => !newSet.has(item)));
+console.log("diffence",diffence);
 
 
