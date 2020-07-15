@@ -1,5 +1,5 @@
 #JS总结第一章
-##&ensp;&ensp;&ensp;&ensp;第二节 JS函数
+##&ensp;&ensp;&ensp;&ensp;第三节 JS函数
 
 ###&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;1.1 函数简介
 
