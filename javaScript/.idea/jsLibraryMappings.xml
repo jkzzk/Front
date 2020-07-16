@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/ES6/Day02" libraries="{javaScript/ES6/Day02/node_modules}" />
+    <file url="file://$PROJECT_DIR$/ES6/Day03" libraries="{javaScript/ES6/Day03/node_modules}" />
+    <file url="PROJECT" libraries="{javaScript/ES6/Day02/node_modules, javaScript/ES6/Day03/node_modules}" />
+    <includedPredefinedLibrary name="HTTP Response Handler" />
+  </component>
+</project>

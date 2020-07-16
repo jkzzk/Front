@@ -172,4 +172,3 @@ console.log("intersect",intersect);
 let diffence = new Set([...set].filter(item => !newSet.has(item)));
 console.log("diffence",diffence);
 
-
