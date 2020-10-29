@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文本样式-全</title>
+    <style type="text/css">
+        .color_1 {
+            color: deeppink;  /*英文颜色*/
+            font-size: 50px;
+            text-align: center;
+        }
+        .color_2 {
+            color: RGB(255,20,147);  /*RGB颜色*/
+            font-size: 50px;
+            text-align: center;
+        }
+        .color_3 {
+            color: RGBA(255,20,147);  /*HSL颜色*/
+            font-size: 50px;
+            text-align: center;
+            background-image: url("imgs/1.jpg");
+        }
+        .color_4 {
+            color: HSL(327,100%,50%);  /*HSL颜色*/
+            font-size: 50px;
+            text-align: center;
+        }
+        .color_5 {
+            color: HSLA(327,100%,50%,.3);  /*HSLA颜色*/
+            font-size: 50px;
+            text-align: center;
+            border: 1px solid;   /* 默认值为cuurentcolor，应用该元素上的color属性 */
+        }
+        .transform_1 {
+            color: HSLA(327,100%,50%,.3);
+            font-size: 50px;
+            text-transform: full-width;  /* 变为全角 */
+            text-align: center;
+        }
+        .decoration_1 {
+            font-size: 50px;
+            text-align: center;
+            text-decoration-line: blink;  /* 文本闪烁，没有任何效果 */
+        }
+        .decoration_2 {
+            color: deeppink;
+            font-size: 50px;
+            text-align: center;
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: #7FFFD4;
+            text-decoration-skip: spaces;
+        }
+        .decoration_2 span {
+            display: inline-block;
+        }
+        .decoration_3 {
+            color: deeppink;
+            font-size: 50px;
+            text-align: center;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #7FFFD4;
+            text-decoration-skip-ink: auto;
+        }
+
+        .decoration_4 {
+            color: deeppink;
+            font-size: 50px;
+            text-align: center;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #7FFFD4;
+            text-decoration-thickness: 50px;
+        }
+
+        .decoration_5 {
+            color: deeppink;
+            font-size: 50px;
+            text-align: center;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #7FFFD4;
+            text-underline-offset: 1em;
+        }
+
+        .decoration_6 {
+            color: deeppink;
+            font-size: 50px;
+            text-align: center;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-color: #7FFFD4;
+            text-underline-position: under;
+        }
+
+        .emphasis_1 {
+            color: deeppink;
+            font-size: 50px;
+            text-align: center;
+            text-emphasis: #FFA500 'ha';
+            -webkit-text-emphasis: #FFA500 'ha';
+            text-emphasis-position: over right;
+            -webkit-text-emphasis-position: under right;
+        }
+
+        .align_1 {
+            font-size: 50px;
+            text-align: justify;
+            text-align-last: justify;
+        }
+
+        .align_2 {
+            font-size: 50px;
+            width: 50%;
+            display: inline-block;
+            text-align: justify;
+            text-align-last: justify;
+        }
+
+        .combine_1 {
+            font-size: 50px;
+            text-align: center;
+            writing-mode: vertical-lr;
+        }
+
+        .combine_1 span {
+            text-combine-upright: all;
+        }
+    </style>
+</head>
+<body>
+    <!-- 字体颜色 -->
+    <p class="color_1"> 我是一个P_1标签 </p>
+    <p class="color_2"> 我是一个P_2标签 </p>
+    <p class="color_3"> 我是一个P_3标签 </p>
+    <p class="color_4"> 我是一个P_4标签 </p>
+    <p class="color_5"> 我是一个P_5标签 </p>
+    <p class="transform_1"> 我是一个P_6标签 </p>
+    <p class="decoration_1"> 我是一个P_7标签 </p>
+    <p class="decoration_2"> 我是 一个P_8 <span>我是一个span标签</span> 标签 </p>
+    <p class="decoration_3"> gggggggaaaaaapppppppppccccccccqqqqqqqq </p>
+    <p class="decoration_4"> gggggggaaaaaapppppppppccccccccqqqqqqqq </p>
+    <p class="decoration_5"> 我是一个P_9标签 </p>
+    <p class="decoration_6"> gggggggaaaaaapppppppppccccccccqqqqqqqq </p>
+    <p class="emphasis_1"> 我是一个P_10标签 </p>
+    <p class="align_1"> 我是一个P_10标签我是一个P_10标签我是一个P_10标签我是一个P_10标签我是一个P_10标签 </p>
+    <p class="align_2"> 我是一个P_10标签 </p>
+    <p class="combine_1"> 我是一个<span>P</span><span>10</span>标签 </p>
+</body>
+</html>

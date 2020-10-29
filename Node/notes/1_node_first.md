@@ -40,7 +40,9 @@
 > 2.命令
 
 * 本地下载，下载到项目下  >>>> npm install 模块名
-* 全局下载，下载到系统用户下（本地仓库） >>>> npm install 模块名 -g
+* 全局下载，下载到系统用户下（本地仓库） >>>> npm install 模块名 -g （一般是一些工具）
+* 下载并保存到依赖 >>>> npm install 模块名 --save
+* 根据依赖文件下载 >>>> npm install
 * 查看全局下载列表，也就是查看本地仓库的所有包 >>>> npm list -g
 * 卸载模块 >>>> npm uninstall 模块名
 * 更新模块 >>>> npm update 模块名
